@@ -1,0 +1,63 @@
+﻿body 
+{
+	padding: 0px;
+	margin: 0px;
+	z-index: 101; 
+	left: 0px; 
+	position: absolute; 
+	top: -20px; 	
+}
+
+form
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+#govLink
+{
+	width: 200px;			
+}
+
+#header
+{
+	border-bottom: solid 1px black;
+	margin-bottom: 10px;
+}
+
+#barLeft, #barRight, #appName, #footer, #print, #pathContainer, #nav, #tabmenuContainer
+{
+	display: none;	
+}
+
+#main, #mainContent
+{
+	margin: 0px;
+	padding: 0px;	
+	background: none;	
+	width: 670px;		
+}
+
+#loginMain
+{
+	margin: 0px;
+	padding: 0px;
+	width: 98%;				
+}
+
+#mainContainer
+{
+	margin: 0px;
+	padding: 0px;
+	width: 98%;				
+}
+
+.commonContent
+{
+	width: 95%;		
+	margin: 0px;
+	padding: 0px;	
+}
+
+
+

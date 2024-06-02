@@ -1,0 +1,906 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/15/2007 2:31:50 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="BLUEDEV-02"
+  DTS:CreatorName="BLUEDEV-02\Serhiy"
+  DTS:DTSID="{F14F6028-ADAC-4FA1-B673-9A5CEF990690}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5058.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MappingToSQL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{85D89602-47C3-4AD4-8273-FD07070340F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL Connection1]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0B266D60-7360-4CC6-9E9A-0F6F5476276D}"
+      DTS:ObjectName="SQL Connection1">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">"Data Source="+ @[User::SQL_DataSource] +";User ID="+ @[User::SQL_UserName] +";Password="+ @[User::SQL_Password] +";Initial Catalog="+ @[User::SQL_InitialCatalog] +";Provider=SQLNCLI11.1;Auto Translate=False;"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=MTE-DEV-DB;User ID=PATMAP;Initial Catalog=PATMAP;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOBHn9XYA6UCVJ3s6wyE/LwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB4Y7KRl/kYDLy+eiEkfXtb7iIhQnIDGuOsOpCC+lfaEgAAAAAOgAAAAAIAACAAAACBr16l00e20bV0MZEnJ7ui8smakVkjTths3zvAZdEWfyAAAABG3Jc6u4yLWW5Cya4yE3Wb3plx9fQwDVK1fdG5YPWR7UAAAAC2jAaHpZd7Q7PRfLwTidXWkiNmVqL6FELaEK6qSoiQ5xoRYuIR7DRzP3PsmHNdljNgAROmoSgDOxgH5WThLsVV</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A07E47FC-F12D-4601-9C13-83907A3AECD6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source_Connection_Script_PPID">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT SessionID,[PPID],UMNM,PATMAP_Code,PATMAP_Roll_Up_Name,Sama_Code FROM [MunicipalitiesMapLink_SSIS_TMP]</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{61D4A396-D932-42DE-AE07-A0D9FF0A0E6A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source_FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">PPID Match File.xls</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{70884D2C-8D58-4F63-8EE4-935692A3ACFC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Source_FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\PATMAP root\Municipal\tmp\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C77EE4E9-710E-4FF9-8CA4-3A2903581A1A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_DataSource">
+      <DTS:VariableValue
+        DTS:DataType="8">MTE-DEV-DB</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C044BB0E-D83F-4B2C-8487-83508EDD8FB7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_InitialCatalog">
+      <DTS:VariableValue
+        DTS:DataType="8">PATMAP</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{19DA9BF3-EDC6-4CBA-BBF3-9A0604A44C87}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_Password">
+      <DTS:VariableValue
+        DTS:DataType="8">iwantaccess</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6C558B50-B3CF-42F1-BB29-D0416978150B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SQL_UserName">
+      <DTS:VariableValue
+        DTS:DataType="8">PATMAP</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{35479B05-CD5E-4A03-AF2C-0E1E3442465C}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Data Conversion"
+              componentClassID="{62B1106C-7DB8-4EC8-ADD6-4C664DFFC54A}"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[SessionID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="47"
+                      cachedName="SessionID"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[SessionID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[PPID]"
+                      cachedDataType="r8"
+                      cachedName="PPID"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PPID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[UMNM]"
+                      cachedDataType="r8"
+                      cachedName="UMNM"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[UMNM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[PATMAP_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PATMAP_Code"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Code]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[PATMAP_Roll_Up_Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="PATMAP_Roll_Up_Name"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Roll_Up_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[Sama_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Sama_Code"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[Sama_Code]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SessionID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SessionID]"
+                      name="Copy of SessionID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[SessionID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PPID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PPID]"
+                      name="Copy of PPID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PPID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UMNM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UMNM]"
+                      name="Copy of UMNM"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[UMNM]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Code]"
+                      name="Copy of PATMAP_Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Roll_Up_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Roll_Up_Name]"
+                      name="Copy of PATMAP_Roll_Up_Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Roll_Up_Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sama_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sama_Code]"
+                      name="Copy of Sama_Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[Sama_Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DataReaderDest  4"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="Creates and populates an ADO.NET in-memory dataset.;Microsoft Corporation;Microsoft SqlServer v9; © 2004 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an ADO.NET in-memory dataset."
+              localeId="1033"
+              name="DataReaderDest  4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of milliseconds before the component times out."
+                  name="ReadTimeout">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies an object that implements the IDataReader interface."
+                  name="DataReader" />
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the component fails when a read time-out occurs."
+                  name="FailOnTimeout">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.DataReaderDestinationAdapter, Microsoft.SqlServer.DataReaderDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DataReaderDest  4.Inputs[DataReader Destination Input]"
+                  hasSideEffects="true"
+                  name="DataReader Destination Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\DataReaderDest  8"
+              componentClassID="{874F7595-FB5F-40FF-96AF-FBFF8250E3EF}"
+              contactInfo="Creates and populates an ADO.NET in-memory dataset.;Microsoft Corporation;Microsoft SqlServer v9; © 2004 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates and populates an ADO.NET in-memory dataset."
+              localeId="1033"
+              name="DataReaderDest  8">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of milliseconds before the component times out."
+                  name="ReadTimeout">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies an object that implements the IDataReader interface."
+                  name="DataReader" />
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the component fails when a read time-out occurs."
+                  name="FailOnTimeout">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.SqlServer.Dts.Pipeline.DataReaderDestinationAdapter, Microsoft.SqlServer.DataReaderDest, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\DataReaderDest  8.Inputs[DataReader Destination Input]"
+                  hasSideEffects="true"
+                  name="DataReader Destination Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Destination - PPID"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination - PPID"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[MunicipalitiesMapLink_SSIS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Destination - PPID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQL Connection1]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQL Connection1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of SessionID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Copy of SessionID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of SessionID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of PPID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of PPID"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PPID]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PPID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of UMNM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of UMNM"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[UMNM]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of UMNM]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of PATMAP_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of PATMAP_Code"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PATMAP_Code]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Code]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of PATMAP_Roll_Up_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of PATMAP_Roll_Up_Name"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PATMAP_Roll_Up_Name]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of PATMAP_Roll_Up_Name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].Columns[Copy of Sama_Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Copy of Sama_Code"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[Sama_Code]"
+                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sama_Code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[SessionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="SessionID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PPID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PPID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[UMNM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="UMNM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PATMAP_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PATMAP_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[PATMAP_Roll_Up_Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PATMAP_Roll_Up_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input].ExternalColumns[Sama_Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Sama_Code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\OLE DB Source - PPID"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source - PPID"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::Source_Connection_Script_PPID</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\OLE DB Source - PPID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SQL Connection1]"
+                  connectionManagerRefId="Package.ConnectionManagers[SQL Connection1]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[SessionID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[SessionID]"
+                      length="47"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[SessionID]"
+                      name="SessionID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PPID]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PPID]"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PPID]"
+                      name="PPID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[UMNM]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[UMNM]"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[UMNM]"
+                      name="UMNM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PATMAP_Code]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Code]"
+                      name="PATMAP_Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Roll_Up_Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PATMAP_Roll_Up_Name]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[PATMAP_Roll_Up_Name]"
+                      name="PATMAP_Roll_Up_Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[Sama_Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[Sama_Code]"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].Columns[Sama_Code]"
+                      name="Sama_Code"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[SessionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="47"
+                      name="SessionID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PPID]"
+                      dataType="r8"
+                      name="PPID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[UMNM]"
+                      dataType="r8"
+                      name="UMNM" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PATMAP_Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="PATMAP_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[PATMAP_Roll_Up_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="PATMAP_Roll_Up_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output].ExternalColumns[Sama_Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sama_Code" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[SessionID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="47"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[SessionID]"
+                      name="SessionID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PPID]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PPID]"
+                      name="PPID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[UMNM]"
+                      dataType="r8"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[UMNM]"
+                      name="UMNM" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PATMAP_Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PATMAP_Code]"
+                      name="PATMAP_Code" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PATMAP_Roll_Up_Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[PATMAP_Roll_Up_Name]"
+                      name="PATMAP_Roll_Up_Name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[Sama_Code]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[Sama_Code]"
+                      name="Sama_Code" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Error Output]"
+              endId="Package\Data Flow Task\DataReaderDest  8.Inputs[DataReader Destination Input]"
+              name="Data Conversion Error Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
+              endId="Package\Data Flow Task\OLE DB Destination - PPID.Inputs[OLE DB Destination Input]"
+              name="Data Conversion Output"
+              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Destination Error Output]"
+              endId="Package\Data Flow Task\DataReaderDest  4.Inputs[DataReader Destination Input]"
+              name="OLE DB Destination Error Output"
+              startId="Package\Data Flow Task\OLE DB Destination - PPID.Outputs[OLE DB Destination Error Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\OLE DB Source - PPID.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{64F58362-F11F-4890-885D-6954293561DE}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{0B266D60-7360-4CC6-9E9A-0F6F5476276D}"
+          SQLTask:SqlStmtSourceType="Variable"
+          SQLTask:SqlStatementSource="User::Source_Connection_Script_PPID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C4A643F6-3F28-4FCF-9B9F-100076625924}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Data Flow Task"
+          TopLeft="14.4433962264151,153.311320754717" />
+        <NodeLayout
+          Size="136,44"
+          Id="Package\Execute SQL Task"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="73.3867924528302,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="8.94339622641513,103.88679245283"
+              Start="0,0"
+              End="8.94339622641513,96.3867924528302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.9245283018868" />
+                  <mssgle:LineSegment
+                    End="8.94339622641513,51.9245283018868" />
+                  <mssgle:LineSegment
+                    End="8.94339622641513,96.3867924528302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

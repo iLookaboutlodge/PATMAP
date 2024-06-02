@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{424BD6E9-3900-4155-93EB-094A9D933C21}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PATMAPGIS_2012</RootNamespace>
+    <AssemblyName>PATMAPGIS_2012</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x64</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GeoAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DynamicAuthoringToolkit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Data\Interop.DynamicAuthoringToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MapTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MapTools.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.7.3.14413, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>App_Data\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSmtp, Version=1.11.0.34196, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\PATMAP2\bin\OpenSmtp.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Foundation, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Geometry, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.MapGuideCommon, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.MapGuideCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.PlatformBase, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.PlatformBase.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Web, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="PATMAP, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PATMAP.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnalysisControl.ascx" />
+    <Content Include="BackgroundLayersControl.ascx" />
+    <Content Include="BackgroundLayersControl.js" />
+    <Content Include="base.css" />
+    <Content Include="BaseLayerControl.ascx" />
+    <Content Include="ChangeThemes.ascx" />
+    <Content Include="ColourChooser.css" />
+    <Content Include="ControlPanel.aspx" />
+    <Content Include="css\base.css" />
+    <Content Include="css\ColourChooser.css" />
+    <Content Include="css\mapping.css" />
+    <Content Include="error.aspx" />
+    <Content Include="error.aspx.designer.vb" />
+    <Content Include="error.aspx.vb" />
+    <Content Include="FiltersControl.ascx" />
+    <Content Include="Images\550pxTitleBar.png" />
+    <Content Include="Images\cancel.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\edit.png" />
+    <Content Include="Images\update.png" />
+    <Content Include="MapError.aspx" />
+    <Content Include="MapFunctions.js" />
+    <Content Include="MapInformation.aspx" />
+    <Content Include="mapping.css" />
+    <Content Include="MasterPage.master.designer.vb" />
+    <Content Include="MasterPage.master.vb" />
+    <Content Include="ParcelThemes.ascx" />
+    <Content Include="QuickZoom.ascx" />
+    <Content Include="RemoteMapFunctions.js" />
+    <Content Include="Reports.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnalysisControl.ascx.cs">
+      <DependentUpon>AnalysisControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnalysisControl.ascx.designer.cs">
+      <DependentUpon>AnalysisControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BackgroundLayersControl.ascx.cs">
+      <DependentUpon>BackgroundLayersControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BackgroundLayersControl.ascx.designer.cs">
+      <DependentUpon>BackgroundLayersControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="BaseLayerControl.ascx.cs">
+      <DependentUpon>BaseLayerControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseLayerControl.ascx.designer.cs">
+      <DependentUpon>BaseLayerControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentBackgroundLayersControl.ascx.cs">
+      <DependentUpon>BoundaryAdjustmentBackgroundLayersControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentBackgroundLayersControl.ascx.designer.cs">
+      <DependentUpon>BoundaryAdjustmentBackgroundLayersControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentControlPanel.aspx.cs">
+      <DependentUpon>BoundaryAdjustmentControlPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentControlPanel.aspx.designer.cs">
+      <DependentUpon>BoundaryAdjustmentControlPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentMap.aspx.cs">
+      <DependentUpon>BoundaryAdjustmentMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\BoundaryAdjustmentMap.aspx.designer.cs">
+      <DependentUpon>BoundaryAdjustmentMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeThemes.ascx.cs">
+      <DependentUpon>ChangeThemes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangeThemes.ascx.designer.cs">
+      <DependentUpon>ChangeThemes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Code\AnalysisBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\BoundaryChangeSettings.cs" />
+    <Compile Include="Code\BuildBoundary.cs" />
+    <Compile Include="Code\ColourChooserTemplate.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\ErrorHandler.cs" />
+    <Compile Include="Code\LTTBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\MapManager.cs">
+    </Compile>
+    <Compile Include="Code\MapManagerNew.cs" />
+    <Compile Include="Code\MappingBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\MapSettings.cs" />
+    <Compile Include="Code\MapThemeDAL.cs" />
+    <Compile Include="Code\Test_Class.cs" />
+    <Compile Include="Code\UtilityCl2.cs" />
+    <Compile Include="Code\Utility_Paint.cs" />
+    <Compile Include="Code\Ut_SQL2TT.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Code\Zoom.cs" />
+    <Compile Include="ColourChooser.aspx.cs">
+      <DependentUpon>ColourChooser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ColourChooser.aspx.designer.cs">
+      <DependentUpon>ColourChooser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ControlPanel.aspx.cs">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlPanel.aspx.designer.cs">
+      <DependentUpon>ControlPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadGISData.aspx.cs">
+      <DependentUpon>loadGISData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadGISData.aspx.designer.cs">
+      <DependentUpon>loadGISData.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\Results.aspx.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\Results.aspx.designer.cs">
+      <DependentUpon>Results.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\ThreadResults.cs" />
+    <Compile Include="FiltersControl.ascx.cs">
+      <DependentUpon>FiltersControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FiltersControl.ascx.designer.cs">
+      <DependentUpon>FiltersControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Layer.aspx.cs">
+      <DependentUpon>Layer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layer.aspx.designer.cs">
+      <DependentUpon>Layer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapControls.aspx.cs">
+      <DependentUpon>MapControls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapControls.aspx.designer.cs">
+      <DependentUpon>MapControls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapError.aspx.cs">
+      <DependentUpon>MapError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapError.aspx.designer.cs">
+      <DependentUpon>MapError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapInformation.aspx.cs">
+      <DependentUpon>MapInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapInformation.aspx.designer.cs">
+      <DependentUpon>MapInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ParcelThemes.ascx.cs">
+      <DependentUpon>ParcelThemes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ParcelThemes.ascx.designer.cs">
+      <DependentUpon>ParcelThemes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuickZoom.ascx.cs">
+      <DependentUpon>QuickZoom.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuickZoom.ascx.designer.cs">
+      <DependentUpon>QuickZoom.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.ascx.cs">
+      <DependentUpon>Reports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.ascx.designer.cs">
+      <DependentUpon>Reports.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Taxtools\Map.aspx.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Taxtools\Map.aspx.designer.cs">
+      <DependentUpon>Map.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.master" />
+    <Content Include="NoLogin.master.designer.vb" />
+    <Content Include="NoLogin.master.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="boundary\BackgroundLayersControl.js" />
+    <Content Include="boundary\BoundaryAdjustmentBackgroundLayersControl.ascx" />
+    <Content Include="boundary\BoundaryAdjustmentControlPanel.aspx" />
+    <Content Include="boundary\BoundaryAdjustmentControls.js" />
+    <Content Include="boundary\BoundaryAdjustmentMap.aspx" />
+    <Content Include="boundary\Map.aspx" />
+    <Content Include="ChangeThemes.js" />
+    <Content Include="ColourChooser.aspx" />
+    <Content Include="css\ProgressStyle.css" />
+    <Content Include="datamgnt\loadGISData.aspx" />
+    <Content Include="datamgnt\Results.aspx" />
+    <Content Include="Images\fadingballs_orange.gif" />
+    <Content Include="index.aspx" />
+    <Content Include="Layer.aspx" />
+    <Content Include="Map.aspx" />
+    <Content Include="MapControls.aspx" />
+    <Content Include="NoLogin.master" />
+    <Content Include="Taxtools\Map.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AIMS2012ToolLib\AIMS2012ToolLib.csproj">
+      <Project>{985a59b8-21a8-4852-948a-18fe36b3a59f}</Project>
+      <Name>AIMS2012ToolLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>57694</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:57694/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>http://172.16.1.22:90/PATMAPGIS_2012/</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,128 @@
+<%@ Master Language="VB" Inherits="PATMAP.MasterPage" Codebehind="MasterPage.master.vb" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Property Assessment and Tax Mapping and Analysis Program</title>
+    <link rel="stylesheet" type="text/css" href="~/css/base.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="~/css/print.css" />
+    <link rel="stylesheet" type="text/css" href="~/ProgressStyle.css" />
+    
+    <!--[if IE 6]>
+        <link rel="stylesheet" type="text/css" href="~/css/IE6style.css" />
+    <![endif]-->
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="Form1" runat="server" >
+    
+    		<div id="progressContainer" runat="server" style="display:none;"  >
+    			<div id="processMessagePatmap">
+							<table cellspacing="0" cellpadding="0" border="0" style="height:100%;" width="100%" >
+							<tr>
+							<td  style="text-align:center;vertical-align:middle;">
+									<table cellspacing="0" cellpadding="0" border="0" style="height:200px;width:276px;background:#FFFFFF">
+									<tr>
+									<td style="text-align:center;vertical-align:middle;">
+											<img src="../images/wait-image.gif" border="0" width="236" height="72" alt="Please Wait..." /><br />
+											<img src="/images/wait.gif" border="0" width="236" height="15" alt="Please Wait..." /><br /><br />
+											<h2><span style="font-family:Arial,Helvetica,sans-serif">Please wait while the calculation is in progress...</span></h2>
+											<br /><asp:Label ID="lblCalcMessage" runat="server" text="" />
+									</td>
+									</tr>
+									</table>
+							</td>
+							</tr>
+							</table>
+					</div>
+					<div id="BackgroundFilterPatmap"></div>
+		    </div>
+    
+				<div id="main">
+            <asp:ScriptManager ID="scmControl" runat="Server" EnableScriptGlobalization="true"
+                EnableScriptLocalization="true" AsyncPostBackTimeout="60000" />
+            <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td>
+                        <!-- Start of Header -->
+                        <div id="header">
+                            <div id="logo">
+                                <a href="https://www.saskatchewan.ca/" target="_blank">
+                                    <asp:Image ID="logoImg" ImageUrl="~/images/governmentLogoNew.jpg" AlternateText="Government of Saskatchewan Logo"
+                                        runat="server" /></a>
+                            </div>
+                            <div id="govLink">
+                                <a href="https://www.saskatchewan.ca/" target="_blank">Government of Saskatchewan
+                                    <br />
+                                    Main Website</a>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div id="barLeft">
+                            <div id="appName">
+                                Property Assessment and Tax Mapping and Analysis Program</div>
+                        </div>
+                        <div id="barRight">
+                            <div id="userInfo">
+                                Currently logged on as:
+                                <asp:Label ID="lblCurUser" runat="server" Text=""></asp:Label><br />
+                                Role:
+                                <asp:Label ID="lblCurRole" runat="server" Text=""></asp:Label></div>
+                        </div>
+                        <!-- End of Header -->
+                        <!-- Start of Main Navigation -->
+                        <div id="nav">
+                            <asp:Menu ID="mainMenu" runat="server" ItemWrap="true" MaximumDynamicDisplayLevels="1" RenderingMode="Table" >
+                                <LevelMenuItemStyles>
+                                    <asp:MenuItemStyle CssClass="Level1Style" Font-Underline="False" />
+                                    <asp:MenuItemStyle CssClass="Level2Style" Font-Underline="False" />
+                                    <asp:MenuItemStyle CssClass="Level3Style" Font-Underline="False" />
+                                    <asp:MenuItemStyle CssClass="Level4Style" Font-Underline="False" />
+                                </LevelMenuItemStyles>
+                                <DynamicMenuStyle CssClass="IE8Fix" />
+                                <DynamicHoverStyle CssClass="Level2StyleHover" />
+                                <StaticSelectedStyle CssClass="Level1StyleSelected" />
+                                <StaticHoverStyle CssClass="Level1StyleHover" />
+                            </asp:Menu>
+                            <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" ShowStartingNode="False" />
+                        </div>
+                        <!-- End of Main Navigation -->
+                        <!-- Start of Main Content -->
+                        <div id="mainContainer">
+                            <div id="pathContainer">
+                                <asp:SiteMapPath ID="breadcrumbs" runat="server" PathSeparator=" / " >
+                                    <PathSeparatorStyle CssClass="pathSepartor" />
+                                </asp:SiteMapPath>
+                            </div>
+                            <asp:ContentPlaceHolder ID="tabMenu" runat="server">
+                            </asp:ContentPlaceHolder>
+                            <div class="errorText">
+                                <asp:UpdatePanel ID="uplError" runat="server">
+                                    <ContentTemplate>
+                                        <asp:Label ID="lblErrorText" runat="server" Text=""></asp:Label>
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </div>
+                            <asp:ContentPlaceHolder ID="mainContent" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <!-- End of Main Content -->
+                    </td>
+                </tr>
+            </table>
+            <!-- Start of Footer -->
+            <div id="footer">
+                <asp:HyperLink ID="hylHome" runat="server" NavigateUrl="~/home.aspx">Home</asp:HyperLink>
+                <span class="footerSeparator">|</span> <a href="https://www.saskatchewan.ca/terms-of-use"
+                    target="_blank">Terms of Use</a> <span class="footerSeparator">|</span> <a href="https://www.saskatchewan.ca/privacy"
+                        target="_blank">Privacy</a> <span class="footerSeparator">|</span> &#169;
+                Copyright 2022
+            </div>
+            <!-- End of Footer -->
+        </div>
+        <asp:Label ID="lblHelp" runat="server" Text=""></asp:Label>
+    </form>
+</body>
+</html>

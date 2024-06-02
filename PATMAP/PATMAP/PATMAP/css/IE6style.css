@@ -1,0 +1,35 @@
+﻿#mainContainer
+{
+	width: 800px;		
+}
+
+.commonContent
+{
+	width: 95%;		
+	padding: 15px 0px 15px 10px;					
+}
+
+#tabmenuContainer
+{
+	width: 90%;		
+	padding: 15px 0px 10px 10px;		
+}
+
+.PageHeaderModule .Header
+{
+	background-image: none;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/550pxTitleBar.png',sizingMethod='scale');
+    width: 100%;
+}
+
+.patmapDisclaimer
+{	
+	text-align: right;
+	width: 98%;
+	padding: 0px;		
+}
+
+.fieldhelp
+{	
+	width: 250px;
+}

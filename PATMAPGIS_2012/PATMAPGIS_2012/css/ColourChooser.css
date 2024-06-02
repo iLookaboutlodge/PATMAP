@@ -1,0 +1,28 @@
+﻿a
+{
+	color: Black;
+	text-decoration: none;
+}
+
+a:hover
+{
+	
+}
+
+a:active
+{
+	color: Black;
+	text-decoration: none;
+}
+table
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: Black;
+}
+td
+{
+	border-style: solid;
+	border-width: 1px;
+	border-color: Black;
+}

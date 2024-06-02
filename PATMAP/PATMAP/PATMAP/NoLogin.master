@@ -1,0 +1,64 @@
+<%@ Master Language="VB" Inherits="PATMAP.NoLogin" Codebehind="NoLogin.master.vb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Property Assessment and Tax Mapping and Analysis Program</title>
+    <link rel="stylesheet" type="text/css" href="~/css/base.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="~/css/print.css" />
+    <!--[if IE 6]>
+        <link rel="stylesheet" type="text/css" href="css/IE6style.css" />
+    <![endif]-->
+    <script language="javascript" type="text/javascript" src="js/general.js"></script>
+    <link rel="shortcut icon" href="~/images/favicon.ico" type="image/x-icon" />
+</head>
+<body>
+    <form id="Form2" runat="server">
+    <div id="loginMain"> 
+        <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td>
+                        <!-- Start of Header -->
+                        <div id="header">
+                           <div id="logo">
+		                        <a href="https://www.saskatchewan.ca/" target="_blank"><asp:Image ID="Image1" ImageUrl="~/images/governmentLogoNew.jpg" AlternateText="Government of Saskatchewan Logo" runat="server" /></a>
+	                        </div> 
+	                        <div id="govLink">
+		                        <a href="https://www.saskatchewan.ca/" target="_blank">Government of Saskatchewan <br /> Main Website</a>
+	                        </div>
+	                    </div>
+                        <div class="clear"></div>	                    
+	                    <div id="barLeft">
+		                    <div id="appName">Property Assessment and Tax Mapping and Analysis Program</div>
+	                    </div>
+	                    <div id="barRight">
+		                     <div id="loginInfo">
+                                 <asp:Label ID="lblDate" runat="server" Text=""></asp:Label></div>                              
+	                    </div>	
+	                    <div class="clear"></div>
+	                    <!-- End of Header -->
+	                    <!-- Start of Main Content --> 
+	                    <div id="loginContainer">
+	                        <br />
+	                        <div class="errorText">
+                               <asp:Label ID="lblErrorText" runat="server"></asp:Label>
+                            </div>                  
+	                        <asp:contentplaceholder id="mainContent" runat="server">
+                            </asp:contentplaceholder>
+                        </div>	                   
+	                    <div class="clear"></div>	
+	                    <!-- End of Main Content -->                                        
+                    </td>
+                </tr>                
+        </table> 
+         <!-- Start of Footer -->
+         <div id="footer">
+             <asp:HyperLink ID="hylLogin" runat="server" NavigateUrl="~/index.aspx">Login</asp:HyperLink> <span class="footerSeparator">|</span> <a href="https://www.saskatchewan.ca/terms-of-use" target="_blank">Terms of Use</a> <span class="footerSeparator">|</span> <a href="https://www.saskatchewan.ca/privacy" target="_blank">Privacy</a> <span class="footerSeparator">|</span> &#169; Copyright 2022
+        </div>	                 
+         <!-- End of Footer -->      
+    </div> 
+     <asp:label ID="lblHelp" runat="server" text=""></asp:label>    
+    </form>
+</body>
+</html>

@@ -1,0 +1,77 @@
+﻿#progressContainer
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+#progressBackgroundFilter
+{
+	left:0px;
+	top:0px;
+  padding:0;
+  margin:0;
+	width:100%;
+	height:100%;
+	text-align: center;
+	position:absolute;
+	background-color:#DBBF56;
+	filter:alpha(opacity=20);
+	opacity:.2;
+  z-index:1000;	
+/*	
+	margin-bottom: 15px;
+	margin-left: 700px;
+	position: absolute;
+	text-align: center;
+*/
+}
+
+#OLDprogressBackgroundFilter 
+{
+		visibility:hidden;
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    overflow:hidden;
+    padding:0;
+    margin:0;
+    background-color:#fff;
+    filter:alpha(opacity=30);
+    opacity:0.3;
+    z-index:1000;
+}
+
+#processMessage 
+{
+		color:white;
+    position:fixed;
+    top:35%;
+    left:50%;
+    padding:10px;
+    width:14%;
+    z-index:1001;
+}
+
+.darkClass {
+	/*visibility: hidden;*/
+	/*visibility: visible;*/
+	background:#fff;
+	/*background: transparent url(bicycle.jpg) no-repeat 0 0;*/
+	position: absolute;
+	/*content : ""; */
+	/* display: block;*/
+	left: 0px;
+	top: 0px;
+	width:100%;
+	height:100%;
+	text-align:center;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	z-index: 5000;
+}    	

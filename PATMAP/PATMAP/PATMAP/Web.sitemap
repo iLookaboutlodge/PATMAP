@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+
+	<siteMapNode url="~/home.aspx?id=def" title="PATMAP"  description="Property Assessment and Tax Mapping and Analysis Program">
+
+		<siteMapNode url="~/home.aspx" title="Home"  description="Home">
+			<siteMapNode url="~/userprofile.aspx" title="User Profile"  description="User Profile" />
+			<!--<siteMapNode url="~/synchronize.aspx" title="Synchronize Satellite"  description="Synchronize Satellite" />-->
+		</siteMapNode>
+
+    <siteMapNode url="~/assmnt/start.aspx?id=def" title="Assessment and Tax Models"  description="Assessment and Tax Models">
+      <siteMapNode url="~/assmnt/start.aspx" title="Start"  description="Start" />
+      <!--<siteMapNode url="~/assmnt/kog.aspx" title="K-12 OG"  description="K-12 OG" />-->
+      <siteMapNode url="~/assmnt/general.aspx" title="General"  description="General" />
+      <siteMapNode url="~/assmnt/pov.aspx" title="POV"  description="POV" />
+      <siteMapNode url="~/assmnt/edpov.aspx" title="EDPOV"  description="EDPOV" />
+      <!--<siteMapNode url="~/assmnt/taxcredits.aspx" title="Tax Credits"  description="Tax Credits" />-->
+      <siteMapNode url="~/assmnt/millrate.aspx" title="PMR"  description="PMR" />
+      <siteMapNode url="~/assmnt/pemr.aspx" title="PEMR"  description="PEMR" />
+      <siteMapNode url="~/assmnt/audittrail.aspx" title="Audit Trail"  description="Audit Trail" />
+      <siteMapNode url="~/assmnt/tables.aspx" title="Tables"  description="Tables">
+        <siteMapNode url="~/assmnt/classes.aspx" title="Classes"  description="Classes" />
+        <siteMapNode url="~/assmnt/taxstatus.aspx" title="Tax Status"  description="Tax Status" />
+      </siteMapNode>
+      <siteMapNode url="~/assmnt/graphs.aspx" title="Graphs"  description="Graphs">
+        <siteMapNode url="~/assmnt/classes.aspx?id=def" title="Classes"  description="Classes" />
+        <siteMapNode url="~/assmnt/taxstatus.aspx?id=def" title="Tax Status"  description="Tax Status" />
+      </siteMapNode>
+      <!--<siteMapNode url="~/Map.aspx" title="Map"  description="Map" />-->
+			<siteMapNode url="~/MapCalculate.aspx" title="Map"  description="Map" />
+		</siteMapNode>
+
+		<siteMapNode url="~/boundary/main.aspx?id=def" title="Boundary Changes"  description="Boundary Changes">
+			<siteMapNode url="~/boundary/main.aspx" title="Main"  description="Main" />
+			<siteMapNode url="~/boundary/tables.aspx" title="Tables"  description="Tables">
+				<siteMapNode url="~/boundary/classes.aspx" title="Classes"  description="Classes" />
+				<siteMapNode url="~/boundary/taxStatusBoundary.aspx" title="Tax Status"  description="Tax Status" />
+			</siteMapNode>
+			<siteMapNode url="~/boundary/map.aspx" title="Map"  description="Map" />
+		</siteMapNode>
+
+		<siteMapNode url="~/taxtools/main.aspx?id=def" title="Local Tax Tools" description="Local Tax Tools">
+			<siteMapNode url="~/taxtools/main.aspx" title="Main" description="Local Tax Tools Main" />
+			<siteMapNode url="~/taxtools/baseyear.aspx" title="Base Year"  description="Base Year" />
+			<siteMapNode url="~/taxtools/starttax.aspx" title="Start Tax" description="Start Tax" />
+			<siteMapNode url="~/taxtools/basetax.aspx" title="Base Tax"  description="Base Tax" />
+			<siteMapNode url="~/taxtools/mintax.aspx" title="Min Tax"  description="Min Tax" />
+			<siteMapNode url="~/taxtools/mrfactors.aspx" title="MR Factors"  description="MR Factors" />
+			<siteMapNode url="~/taxtools/phasein.aspx" title="Phase-In"  description="Phase-In" />
+			<siteMapNode url="~/taxtools/tables.aspx" title="Tables"  description="LTT Tables" />
+			<siteMapNode url="~/taxtools/graphs.aspx" title="Graphs"  description="LTT Graphs" />
+			<siteMapNode url="~/taxtools/map.aspx" title="MAP"  description="LTT MAP" />
+		</siteMapNode>
+
+		<siteMapNode url="" title="Data Management"  description="Data Management">
+			<siteMapNode url="~/datamgnt/loadassessment.aspx?id=def" title="Load Data"  description="Load Data">
+				<siteMapNode url="~/datamgnt/loadassessment.aspx" title="Assessment Data"  description="Assessment Data" />
+				<siteMapNode url="~/datamgnt/loadmillrate.aspx" title="Mill Rate Survey"  description="Mill Rate Survey" />
+				<siteMapNode url="~/datamgnt/loadschool.aspx" title="School Division"  description="School Division" />
+				<siteMapNode url="~/datamgnt/loadmunicipal.aspx" title="Municipal"  description="Municipal" />
+				<!--<siteMapNode url="~/datamgnt/loadkog.aspx" title="K-12 OG"  description="K-12 OG" />-->
+				<siteMapNode url="~/datamgnt/loadpemr.aspx" title="PEMR"  description="PEMR" />
+				<siteMapNode url="~/datamgnt/loadgisdata.aspx" title="GIS Data"  description="GIS Data" />
+				<siteMapNode url="~/datamgnt/loadpotash.aspx" title="Potash"  description="Potash" />
+			</siteMapNode>
+
+			<siteMapNode url="~/datamgnt/viewassessment.aspx?id=def" title="Edit Data"  description="Edit Data">
+				<siteMapNode url="~/datamgnt/viewassessment.aspx" title="Assessment Data"  description="Assessment Data">
+					<siteMapNode url="~/datamgnt/editassessment.aspx" title="Edit Assessment Data"  description="Edit Assessment Data" />
+				</siteMapNode>
+				<!--<siteMapNode url="~/datamgnt/viewtaxcredit.aspx" title="Tax Credit"  description="Tax Credit">
+					<siteMapNode url="~/datamgnt/edittaxcredit.aspx" title="Edit Tax Credit"  description="Edit Tax Credit" />
+				</siteMapNode>-->				
+				<siteMapNode url="~/datamgnt/viewmillrate.aspx" title="Mill Rate Survey"  description="Mill Rate Survey">
+					<siteMapNode url="~/datamgnt/editmillrate.aspx" title="Edit Mill Rate Survey"  description="Edit Mill Rate Survey" />
+				</siteMapNode>
+				<siteMapNode url="~/datamgnt/viewpov.aspx" title="POV"  description="POV">
+					<siteMapNode url="~/datamgnt/editpov.aspx" title="Edit POV"  description="Edit POV" />
+				</siteMapNode>
+				<siteMapNode url="~/datamgnt/viewpotash.aspx" title="Potash"  description="Potash">
+					<siteMapNode url="~/datamgnt/editpotash.aspx" title="Edit Potash"  description="Edit Potash" />
+				</siteMapNode>
+				<siteMapNode url="~/datamgnt/viewpemr.aspx" title="PEMR"  description="PEMR">
+					<siteMapNode url="~/datamgnt/editpemr.aspx" title="Edit PEMR"  description="Edit PEMR" />
+				</siteMapNode>
+				<!--<siteMapNode url="~/datamgnt/viewkog.aspx" title="K-12 OG"  description="K-12 OG">
+					<siteMapNode url="~/datamgnt/editkog.aspx" title="Edit K-12 OG"  description="Edit K-12 OG" />
+				</siteMapNode>-->
+				
+				<siteMapNode url="~/datamgnt/viewtaxentity.aspx?id=def" title="Code Data"  description="Code Data">
+					<siteMapNode url="~/datamgnt/viewtaxentity.aspx" title="Tax Entity"  description="Tax Entity">
+						<siteMapNode url="~/datamgnt/edittaxentity.aspx" title="Edit Tax Entity"  description="Edit Tax Entity" />
+					</siteMapNode>
+					<siteMapNode url="~/datamgnt/viewtaxclass.aspx" title="Tax Class"  description="Tax Class">
+						<siteMapNode url="~/datamgnt/edittaxclass.aspx" title="Edit Tax Entity"  description="Edit Tax Entity" />
+					</siteMapNode>
+					
+					<!--<siteMapNode url="~/datamgnt/viewtaxstatus.aspx" title="Tax Status"  description="Tax Status">
+						<siteMapNode url="~/datamgnt/edittaxstatus.aspx" title="Edit Tax Status"  description="Edit Tax Status" />
+					</siteMapNode>-->
+					
+					
+					<siteMapNode url="~/datamgnt/viewjuristype.aspx" title="Jurisdiction Type"  description="Jurisdiction Type">
+						<siteMapNode url="~/datamgnt/editjuristype.aspx" title="Edit Jurisdiction Type"  description="Edit Jurisdiction Type" />
+					</siteMapNode>
+					<siteMapNode url="~/datamgnt/viewpropcode.aspx" title="Present Use Code"  description="Property Use Code">
+						<siteMapNode url="~/datamgnt/editpropcode.aspx" title="Edit Present Use Code"  description="Edit Property Use Code" />
+					</siteMapNode>
+					<siteMapNode url="~/datamgnt/viewpemrtaxclass.aspx" title="PEMR Tax Class"  description="PEMR Tax Class">
+						<siteMapNode url="~/datamgnt/editpemrtaxclass.aspx" title="Edit PEMR Tax Class"  description="Edit PEMR Tax Class" />
+					</siteMapNode>
+					<siteMapNode url="~/datamgnt/viewpemrtiers.aspx" title="PEMR Tiers"  description="PEMR Tiers">
+					</siteMapNode>
+					
+				</siteMapNode>
+			</siteMapNode>
+
+			<siteMapNode url="~/datamgnt/export.aspx" title="Export Data"  description="Export Data" />
+
+			<siteMapNode url="~/datamgnt/viewtaxyearmodel.aspx?id=def" title="Manage Tax Year Models, Scenarios, Data Sets"  description="Manage Tax Year Model, Scenario, Data Sets">
+				<siteMapNode url="~/datamgnt/viewtaxyearmodel.aspx" title="Tax Year Model"  description="Tax Year Model">
+					<siteMapNode url="~/datamgnt/edittaxyearmodel.aspx" title="Edit Tax Year Model"  description="Edit Tax Year Model" />
+				</siteMapNode>
+				<siteMapNode url="~/datamgnt/viewscenario.aspx" title="Scenario"  description="Scenario"></siteMapNode>
+				<siteMapNode url="~/datamgnt/viewdataset.aspx" title="Data Set"  description="Data Set">
+					<siteMapNode url="~/datamgnt/editdataset.aspx" title="Data Set Info"  description="Data Set Info" />
+				</siteMapNode>
+			</siteMapNode>
+
+			<siteMapNode url="~/datamgnt/viewboundarymodel.aspx" title="Manage Boundary Change Models"  description="Manage Boundary Change Models" >
+				<siteMapNode url="~/datamgnt/editboundarymodel.aspx" title="Edit Boundary Model"  description="Edit Boundary Model" />
+			</siteMapNode>
+		</siteMapNode>
+
+		<siteMapNode url="" title="System Admin"  description="System Admin">
+			<siteMapNode url="~/sysadmin/viewusers.aspx?id=def" title="Users and User Groups"  description="Users and User Groups">
+				<siteMapNode url="~/sysadmin/viewusers.aspx" title="Users"  description="Users">
+					<siteMapNode url="~/sysadmin/edituser.aspx" title="Edit User"  description="Edit User" />
+				</siteMapNode>
+				<siteMapNode url="~/sysadmin/viewgroups.aspx" title="User Groups"  description="User Groups">
+					<siteMapNode url="~/sysadmin/editgroup.aspx" title="Edit User Group"  description="Edit User Group" />
+				</siteMapNode>
+				<siteMapNode url="~/sysadmin/viewlevels.aspx" title="User Levels"  description="User Levels">
+					<siteMapNode url="~/sysadmin/editlevel.aspx" title="Edit User Level"  description="Edit User Level" />
+				</siteMapNode>
+			</siteMapNode>
+			<siteMapNode url="~/sysadmin/viewhelpscreen.aspx?id=def" title="Help Text"  description="Help Text">
+				<siteMapNode url="~/sysadmin/viewhelpscreen.aspx" title="Help Screens"  description="Help Screens">
+					<siteMapNode url="~/sysadmin/edithelpscreen.aspx" title="Edit Help Screens"  description="Edit Help Screens" />
+				</siteMapNode>
+				<siteMapNode url="~/sysadmin/viewhelpfield.aspx" title="Form Fields Help Text"  description="Form Fields Help Text">
+					<siteMapNode url="~/sysadmin/edithelpfield.aspx" title="Edit Form Fields Help Text"  description="Edit Form Fields Help Text" />
+				</siteMapNode>
+				<siteMapNode url="~/sysadmin/viewhelperr.aspx" title="Error Msgs Help Text"  description="Error Msgs Help Text">
+					<siteMapNode url="~/sysadmin/edithelperr.aspx" title="Edit Error Msgs Help Text"  description="Edit Error Msgs Help Text" />
+				</siteMapNode>
+			</siteMapNode>
+			<siteMapNode url="~/sysadmin/viewfunctions.aspx" title="Functions"  description="Functions" >
+				<siteMapNode url="~/sysadmin/editfunctions.aspx" title="Edit Function"  description="Edit Functions" />
+			</siteMapNode>
+			<siteMapNode url="~/sysadmin/viewsysstat.aspx?id=def" title="System Statistics"  description="System Statistics" >
+				<siteMapNode url="~/sysadmin/viewsysstat.aspx" title="System Statistics"  description="System Statistics" />
+			</siteMapNode>
+		</siteMapNode>
+
+		<siteMapNode url="~/help.aspx" title="Help"  description="Help"></siteMapNode>
+
+		<siteMapNode url="~/logout.aspx" title="Logout"  description="Logout"></siteMapNode>
+
+		<siteMapNode url="~/disclaimer.aspx" title="Disclaimer"  description="Disclaimer"></siteMapNode>
+
+		<siteMapNode url="~/privacy.aspx" title="Privacy"  description="Privacy"></siteMapNode>
+
+		<siteMapNode url="~/error.aspx" title="Error"  description="Error"></siteMapNode>
+	</siteMapNode>
+
+</siteMap>

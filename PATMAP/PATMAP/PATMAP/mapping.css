@@ -1,0 +1,53 @@
+﻿.navigationSelected
+{
+background-color: #DBBF56;
+}
+
+.navigation tr td
+{
+color: #000;
+border: solid 2px #DBBF56;
+text-decoration: none;
+text-align: center;
+}
+
+.navigation tr td a
+{
+color: #000;
+text-decoration: none;
+font-size: smaller;
+}
+
+.checkboxList
+{
+	border: solid 1px #DBBF56;
+}
+ 
+.parcelThemeRow
+{
+	vertical-align: middle;
+	border-right: #dbbf56 1px solid;
+	border-top: #dbbf56 1px solid;
+	border-left: #dbbf56 1px solid;
+	border-bottom: #dbbf56 1px solid;
+	border-collapse: collapse;
+	table-layout: auto;
+	padding-right: 1px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.parcelThemeRow td
+{
+	vertical-align: middle;
+	border-bottom: #dbbf56 1px solid;
+	border-collapse: collapse;
+	table-layout: auto;
+}
+
+.sectionHeader
+{
+	font-weight: bold;
+}
+
+

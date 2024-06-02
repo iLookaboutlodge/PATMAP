@@ -1,0 +1,1654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{8A2A3313-7828-49BE-9F9C-C5252445DB20}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PATMAP</RootNamespace>
+    <AssemblyName>PATMAP</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>PATMAP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>PATMAP.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AIMS2012ToolLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AIMS2012ToolLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit, Version=1.0.10301.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeTextBox, Version=3.1.6.34851, Culture=neutral, PublicKeyToken=5962a4e684a48b87, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\FreeTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.DynamicAuthoringToolkit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.DynamicAuthoringToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="MapTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MapTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DLLReportViewer2012\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DLLReportViewer2012\Microsoft.ReportViewer.WebForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.SqlServer.DTSPipelineWrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SQLServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.SQLServer.ManagedDTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Microsoft.SqlServer.PipelineHost.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenSmtp, Version=1.11.0.34196, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OpenSmtp.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Foundation, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Geometry, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.MapGuideCommon, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.MapGuideCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.PlatformBase, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.PlatformBase.dll</HintPath>
+    </Reference>
+    <Reference Include="OSGeo.MapGuide.Web, Version=3.1.1.4601, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\OSGeo.MapGuide.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="PATMAPGIS_2012, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PATMAPGIS_2012.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnalysisControl.ascx" />
+    <Content Include="assmnt\audittrail.aspx" />
+    <Content Include="assmnt\classes.aspx" />
+    <Content Include="assmnt\controls\header.ascx" />
+    <Content Include="assmnt\edpov.aspx" />
+    <Content Include="assmnt\general.aspx" />
+    <Content Include="assmnt\graphs.aspx" />
+    <Content Include="assmnt\kog.aspx" />
+    <Content Include="assmnt\millrate.aspx" />
+    <Content Include="assmnt\pemr.aspx" />
+    <Content Include="assmnt\pov.aspx" />
+    <Content Include="assmnt\start.aspx" />
+    <Content Include="assmnt\tables.aspx" />
+    <Content Include="assmnt\taxcredits.aspx" />
+    <Content Include="assmnt\taxstatus.aspx" />
+    <Content Include="assmnt\viewReport.aspx" />
+    <Content Include="BackgroundLayersControl.ascx" />
+    <Content Include="BackgroundLayersControl.js" />
+    <Content Include="base.css" />
+    <Content Include="BaseLayerControl.ascx" />
+    <Content Include="bin\ACE.dll" />
+    <Content Include="bin\FoundationUnmanagedApi.dll" />
+    <Content Include="bin\FreeTextBox.dll" />
+    <Content Include="bin\GeometryUnmanagedApi.dll" />
+    <Content Include="bin\GEOS.dll" />
+    <Content Include="bin\lib_json.dll" />
+    <Content Include="bin\MapGuideCommonUnmanagedApi.dll" />
+    <Content Include="bin\MgFoundation.dll" />
+    <Content Include="bin\MgGeometry.dll" />
+    <Content Include="bin\MgHttpHandler.dll" />
+    <Content Include="bin\MgMapGuideCommon.dll" />
+    <Content Include="bin\MgMdfModel.dll" />
+    <Content Include="bin\MgMdfParser.dll" />
+    <Content Include="bin\MgPlatformBase.dll" />
+    <Content Include="bin\MgWebApp.dll" />
+    <Content Include="bin\MgWebSupport.dll" />
+    <Content Include="bin\OpenSmtp.dll" />
+    <Content Include="bin\OSGeo.MapGuide.Foundation.dll" />
+    <Content Include="bin\OSGeo.MapGuide.Geometry.dll" />
+    <Content Include="bin\OSGeo.MapGuide.MapGuideCommon.dll" />
+    <Content Include="bin\OSGeo.MapGuide.PlatformBase.dll" />
+    <Content Include="bin\OSGeo.MapGuide.Web.dll" />
+    <Content Include="bin\PATMAP.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="bin\PlatformBaseUnmanagedApi.dll" />
+    <Content Include="bin\WebUnmanagedApi.dll" />
+    <Content Include="bin\xerces-c_3_1mg.dll" />
+    <Content Include="boundary\BackgroundLayersControl.js" />
+    <Content Include="boundary\BoundaryAdjustmentControlPanel.aspx" />
+    <Content Include="boundary\BoundaryAdjustmentControls.js" />
+    <Content Include="boundary\BoundaryAdjustmentMap.aspx" />
+    <Content Include="boundary\classes.aspx" />
+    <Content Include="boundary\graphs.aspx" />
+    <Content Include="boundary\linearproperty.aspx" />
+    <Content Include="boundary\main.aspx" />
+    <Content Include="boundary\Map.aspx" />
+    <Content Include="boundary\tables.aspx" />
+    <Content Include="boundary\taxStatusBoundary.aspx" />
+    <Content Include="boundary\viewReportBoundary.aspx" />
+    <Content Include="browserdetect.js" />
+    <Content Include="ChangeThemes.ascx" />
+    <Content Include="ChangeThemes.js" />
+    <Content Include="ColourChooser.aspx" />
+    <Content Include="ColourChooser.css" />
+    <Content Include="contextmenu.js" />
+    <Content Include="ControlPanel.aspx" />
+    <Content Include="css\base.css" />
+    <Content Include="css\ColourChooser.css" />
+    <Content Include="css\IE6style.css" />
+    <Content Include="css\mapping.css" />
+    <Content Include="css\print.css" />
+    <Content Include="datamgnt\editassessment.aspx" />
+    <Content Include="datamgnt\editboundarymodel.aspx" />
+    <Content Include="datamgnt\editdataset.aspx" />
+    <Content Include="datamgnt\editjuristype.aspx" />
+    <Content Include="datamgnt\editkog.aspx" />
+    <Content Include="datamgnt\editlttrollup.aspx" />
+    <Content Include="datamgnt\editmillrate.aspx" />
+    <Content Include="datamgnt\editpemr.aspx" />
+    <Content Include="datamgnt\editpemrtaxclass.aspx" />
+    <Content Include="datamgnt\editpotash.aspx" />
+    <Content Include="datamgnt\editpov.aspx" />
+    <Content Include="datamgnt\editpropcode.aspx" />
+    <Content Include="datamgnt\edittaxclass.aspx" />
+    <Content Include="datamgnt\edittaxcredit.aspx" />
+    <Content Include="datamgnt\edittaxentity.aspx" />
+    <Content Include="datamgnt\edittaxstatus.aspx" />
+    <Content Include="datamgnt\edittaxyearmodel.aspx" />
+    <Content Include="datamgnt\export.aspx" />
+    <Content Include="datamgnt\fileUpload.swf" />
+    <Content Include="datamgnt\loadassessment.aspx" />
+    <Content Include="datamgnt\loadGISData.aspx" />
+    <Content Include="datamgnt\loadkog.aspx" />
+    <Content Include="datamgnt\loadmillrate.aspx" />
+    <Content Include="datamgnt\loadmunicipal.aspx" />
+    <Content Include="datamgnt\loadpemr.aspx" />
+    <Content Include="datamgnt\loadpotash.aspx" />
+    <Content Include="datamgnt\loadschool.aspx" />
+    <Content Include="datamgnt\Results.aspx" />
+    <Content Include="datamgnt\sorttaxclass.aspx" />
+    <Content Include="datamgnt\viewassessment.aspx" />
+    <Content Include="datamgnt\viewboundarymodel.aspx" />
+    <Content Include="datamgnt\viewdataset.aspx" />
+    <Content Include="datamgnt\viewjuristype.aspx" />
+    <Content Include="datamgnt\viewkog.aspx" />
+    <Content Include="datamgnt\viewlttrollup.aspx" />
+    <Content Include="datamgnt\viewmillrate.aspx" />
+    <Content Include="datamgnt\viewpemr.aspx" />
+    <Content Include="datamgnt\viewpemrtaxclass.aspx" />
+    <Content Include="datamgnt\viewpemrtiers.aspx" />
+    <Content Include="datamgnt\viewpotash.aspx" />
+    <Content Include="datamgnt\viewpov.aspx" />
+    <Content Include="datamgnt\viewpropcode.aspx" />
+    <Content Include="datamgnt\viewscenario.aspx" />
+    <Content Include="datamgnt\viewtaxclass.aspx" />
+    <Content Include="datamgnt\viewtaxcredit.aspx" />
+    <Content Include="datamgnt\viewtaxentity.aspx" />
+    <Content Include="datamgnt\viewtaxstatus.aspx" />
+    <Content Include="datamgnt\viewtaxyearmodel.aspx" />
+    <Content Include="digitize.js" />
+    <Content Include="disclaimer.aspx" />
+    <Content Include="downloadfile.aspx" />
+    <Content Include="error.aspx" />
+    <Content Include="FiltersControl.ascx" />
+    <Content Include="FlashFileUpload.swf" />
+    <Content Include="floatingmessage.js" />
+    <Content Include="forgotpassword.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="hashtable.js" />
+    <Content Include="help.aspx" />
+    <Content Include="home.aspx" />
+    <Content Include="images\550pxTitleBar.png" />
+    <Content Include="images\arrow.gif" />
+    <Content Include="images\btnAdd.gif" />
+    <Content Include="images\btnAddAssessment.gif" />
+    <Content Include="images\btnAddBoundary.gif" />
+    <Content Include="images\btnAddClass.gif" />
+    <Content Include="images\btnAddEntity.gif" />
+    <Content Include="images\btnAddError.gif" />
+    <Content Include="images\btnAddField.gif" />
+    <Content Include="images\btnAddFunction.gif" />
+    <Content Include="images\btnAddGroup.gif" />
+    <Content Include="images\btnAddJurisType.gif" />
+    <Content Include="images\btnAddKOG.gif" />
+    <Content Include="images\btnAddLevel.gif" />
+    <Content Include="images\btnAddMillRate.gif" />
+    <Content Include="images\btnAddPotash.gif" />
+    <Content Include="images\btnAddPOV.gif" />
+    <Content Include="images\btnAddPropCode.gif" />
+    <Content Include="images\btnAddReport.gif" />
+    <Content Include="images\btnAddRollupClass.gif" />
+    <Content Include="images\btnAddScreen.gif" />
+    <Content Include="images\btnAddStatus.gif" />
+    <Content Include="images\btnAddTaxCredit.gif" />
+    <Content Include="images\btnAddTaxTools.gif" />
+    <Content Include="images\btnAddTaxYr.gif" />
+    <Content Include="images\btnAddUser.gif" />
+    <Content Include="images\btnAttach.gif" />
+    <Content Include="images\btnCalendar.gif" />
+    <Content Include="images\btnCancel.gif" />
+    <Content Include="images\btnClasses.gif" />
+    <Content Include="images\btnClear.gif" />
+    <Content Include="images\btnCollapse.gif" />
+    <Content Include="images\btnContinue.gif" />
+    <Content Include="images\btnExpand.gif" />
+    <Content Include="images\btnExport.gif" />
+    <Content Include="images\btnGenerate.gif" />
+    <Content Include="images\btnHelp.gif" />
+    <Content Include="images\btnLinearAdj.gif" />
+    <Content Include="images\btnLoad.gif" />
+    <Content Include="images\btnLogin.gif" />
+    <Content Include="images\btnMoveDown.gif" />
+    <Content Include="images\btnMoveLeft.gif" />
+    <Content Include="images\btnMoveRight.gif" />
+    <Content Include="images\btnMoveUp.gif" />
+    <Content Include="images\btnPrint.gif" />
+    <Content Include="images\btnRemove.gif" />
+    <Content Include="images\btnReset.gif" />
+    <Content Include="images\btnSave.gif" />
+    <Content Include="images\btnSaveAs.gif" />
+    <Content Include="images\btnSearch.gif" />
+    <Content Include="images\btnShow.gif" />
+    <Content Include="images\btnSmAddTaxTools.gif" />
+    <Content Include="images\btnSmCancel.gif" />
+    <Content Include="images\btnSmDelete.gif" />
+    <Content Include="images\btnSmEdit.gif" />
+    <Content Include="images\btnSmHistory.gif" />
+    <Content Include="images\btnSmReject.gif" />
+    <Content Include="images\btnSmRestore.gif" />
+    <Content Include="images\btnSmSave.gif" />
+    <Content Include="images\btnSubmit.gif" />
+    <Content Include="images\btnSynchronize.gif" />
+    <Content Include="images\btnSyncLaptop.gif" />
+    <Content Include="images\btnSyncServer.gif" />
+    <Content Include="images\btnTaxStatus.gif" />
+    <Content Include="images\btnTransfer.gif" />
+    <Content Include="images\btnUseMap.gif" />
+    <Content Include="images\btnUserProfile.gif" />
+    <Content Include="images\buttons1.gif" />
+    <Content Include="images\buttons2.gif" />
+    <Content Include="images\buttons3.gif" />
+    <Content Include="images\cancel.png" />
+    <Content Include="images\clearOn.jpg" />
+    <Content Include="images\Constituency_Boundaries_Background.gif" />
+    <Content Include="images\Copy of UnmatchedParcels.gif" />
+    <Content Include="images\copyOn.gif" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\fadingballs_orange.gif" />
+    <Content Include="images\Favicon.ico" />
+    <Content Include="images\governmentLogo.gif" />
+    <Content Include="images\governmentLogo.jpg" />
+    <Content Include="images\governmentLogoNew.jpg" />
+    <Content Include="images\hdrLeftBackground.jpg" />
+    <Content Include="images\hdrRightBackground.jpg" />
+    <Content Include="images\helpTextImages\add tax class-present use code.bmp" />
+    <Content Include="images\helpTextImages\add tax class-type.bmp" />
+    <Content Include="images\helpTextImages\arrow.bmp" />
+    <Content Include="images\helpTextImages\assess and tax-map.bmp" />
+    <Content Include="images\helpTextImages\Assessment and Tax-tables.bmp" />
+    <Content Include="images\helpTextImages\assessment mun.bmp" />
+    <Content Include="images\helpTextImages\assessment mun.GIF" />
+    <Content Include="images\helpTextImages\assessment school.bmp" />
+    <Content Include="images\helpTextImages\assessment tax class.bmp" />
+    <Content Include="images\helpTextImages\Bound1.bmp" />
+    <Content Include="images\helpTextImages\Bound2.bmp" />
+    <Content Include="images\helpTextImages\bound3.bmp" />
+    <Content Include="images\helpTextImages\bound4.bmp" />
+    <Content Include="images\helpTextImages\bound5.bmp" />
+    <Content Include="images\helpTextImages\bound6%281%29.bmp" />
+    <Content Include="images\helpTextImages\bound6.bmp" />
+    <Content Include="images\helpTextImages\bound7%281%29.bmp" />
+    <Content Include="images\helpTextImages\bound7.bmp" />
+    <Content Include="images\helpTextImages\bound8.bmp" />
+    <Content Include="images\helpTextImages\Boundary Changes-Main.bmp" />
+    <Content Include="images\helpTextImages\Boundary-main.bmp" />
+    <Content Include="images\helpTextImages\Boundary-main2.bmp" />
+    <Content Include="images\helpTextImages\Boundary-main3.bmp" />
+    <Content Include="images\helpTextImages\boundary-tables.bmp" />
+    <Content Include="images\helpTextImages\btnAdd.gif" />
+    <Content Include="images\helpTextImages\btnAddAssessment.gif" />
+    <Content Include="images\helpTextImages\btnAddEntity.gif" />
+    <Content Include="images\helpTextImages\btnAddError.gif" />
+    <Content Include="images\helpTextImages\btnAddFunction.gif" />
+    <Content Include="images\helpTextImages\btnAddKOG.gif" />
+    <Content Include="images\helpTextImages\btnHelp.png" />
+    <Content Include="images\helpTextImages\cancel_16x16.png" />
+    <Content Include="images\helpTextImages\collapse_blue.jpg" />
+    <Content Include="images\helpTextImages\Creek.jpg" />
+    <Content Include="images\helpTextImages\data manage-data new.bmp" />
+    <Content Include="images\helpTextImages\data manage-data set.bmp" />
+    <Content Include="images\helpTextImages\data manage-year.bmp" />
+    <Content Include="images\helpTextImages\Data set info-file.bmp" />
+    <Content Include="images\helpTextImages\delete tab.JPG" />
+    <Content Include="images\helpTextImages\delete verify.bmp" />
+    <Content Include="images\helpTextImages\edinewda.bmp" />
+    <Content Include="images\helpTextImages\edit boundary-assessment.bmp" />
+    <Content Include="images\helpTextImages\edit boundary-file.bmp" />
+    <Content Include="images\helpTextImages\edit boundary-mill rate.bmp" />
+    <Content Include="images\helpTextImages\edit boundary-POV.bmp" />
+    <Content Include="images\helpTextImages\edit boundary-status.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-assess data set.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-file.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-k12 og.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-mill rate.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-potash.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-POV.bmp" />
+    <Content Include="images\helpTextImages\edit tax year model-tax credit.bmp" />
+    <Content Include="images\helpTextImages\Edit Users-province.bmp" />
+    <Content Include="images\helpTextImages\Edit Users-user level.bmp" />
+    <Content Include="images\helpTextImages\Export-Data set name.bmp" />
+    <Content Include="images\helpTextImages\Export-Data source.bmp" />
+    <Content Include="images\helpTextImages\Export-Municipality.bmp" />
+    <Content Include="images\helpTextImages\Export-School Division.bmp" />
+    <Content Include="images\helpTextImages\Export-Tax Class.bmp" />
+    <Content Include="images\helpTextImages\Export-Tax type.bmp" />
+    <Content Include="images\helpTextImages\ExportData set name.bmp" />
+    <Content Include="images\helpTextImages\Exportmunicipality.bmp" />
+    <Content Include="images\helpTextImages\ExportSchool Division%281%29.bmp" />
+    <Content Include="images\helpTextImages\ExportSchool Division.bmp" />
+    <Content Include="images\helpTextImages\ExportTax Class.bmp" />
+    <Content Include="images\helpTextImages\ExportTax type.bmp" />
+    <Content Include="images\helpTextImages\Form fields-fieldname.bmp" />
+    <Content Include="images\helpTextImages\Form fields-type.bmp" />
+    <Content Include="images\helpTextImages\Frangipani Flowers%281%29.jpg" />
+    <Content Include="images\helpTextImages\Frangipani Flowers.jpg" />
+    <Content Include="images\helpTextImages\General.bmp" />
+    <Content Include="images\helpTextImages\General2.bmp" />
+    <Content Include="images\helpTextImages\grap taxstatus.bmp" />
+    <Content Include="images\helpTextImages\graph jur type.bmp" />
+    <Content Include="images\helpTextImages\graph mun.bmp" />
+    <Content Include="images\helpTextImages\graph school%281%29.bmp" />
+    <Content Include="images\helpTextImages\graph school.bmp" />
+    <Content Include="images\helpTextImages\graph taxclass%281%29.bmp" />
+    <Content Include="images\helpTextImages\graph taxclass.bmp" />
+    <Content Include="images\helpTextImages\graph taxtype.bmp" />
+    <Content Include="images\helpTextImages\graphs report.bmp" />
+    <Content Include="images\helpTextImages\Help screen-screen.bmp" />
+    <Content Include="images\helpTextImages\Help screen-section.bmp" />
+    <Content Include="images\helpTextImages\help text.bmp" />
+    <Content Include="images\helpTextImages\HomeHelp.jpg" />
+    <Content Include="images\helpTextImages\HomeUserLevel.jpg" />
+    <Content Include="images\helpTextImages\jurisdictiontypes.bmp" />
+    <Content Include="images\helpTextImages\K-12 OG.bmp" />
+    <Content Include="images\helpTextImages\Load Mill Rate-file.bmp" />
+    <Content Include="images\helpTextImages\LTT base tax.bmp" />
+    <Content Include="images\helpTextImages\LTT Base year rev summ.bmp" />
+    <Content Include="images\helpTextImages\LTT Base Yer.bmp" />
+    <Content Include="images\helpTextImages\LTT bottom page.bmp" />
+    <Content Include="images\helpTextImages\LTT Classes.bmp" />
+    <Content Include="images\helpTextImages\LTT Graph reports.bmp" />
+    <Content Include="images\helpTextImages\LTT graphs%281%29.bmp" />
+    <Content Include="images\helpTextImages\LTT graphs.bmp" />
+    <Content Include="images\helpTextImages\LTT menu.bmp" />
+    <Content Include="images\helpTextImages\LTT mill rate factor.bmp" />
+    <Content Include="images\helpTextImages\LTT min tax%281%29.bmp" />
+    <Content Include="images\helpTextImages\LTT min tax.bmp" />
+    <Content Include="images\helpTextImages\LTT phase in entry.bmp" />
+    <Content Include="images\helpTextImages\LTT phase in years.bmp" />
+    <Content Include="images\helpTextImages\LTT Province letters.bmp" />
+    <Content Include="images\helpTextImages\LTT Report type%281%29.bmp" />
+    <Content Include="images\helpTextImages\LTT Report type.bmp" />
+    <Content Include="images\helpTextImages\LTT rev neutral.bmp" />
+    <Content Include="images\helpTextImages\LTT Sask Logo%281%29.bmp" />
+    <Content Include="images\helpTextImages\LTT Sask Logo.bmp" />
+    <Content Include="images\helpTextImages\LTT Select Classes%281%29.bmp" />
+    <Content Include="images\helpTextImages\LTT Select Classes.bmp" />
+    <Content Include="images\helpTextImages\LTT Select Sub Mun.bmp" />
+    <Content Include="images\helpTextImages\LTT show.bmp" />
+    <Content Include="images\helpTextImages\LTT Start tax subject year rev.bmp" />
+    <Content Include="images\helpTextImages\LTT sub clear.bmp" />
+    <Content Include="images\helpTextImages\LTT tables.bmp" />
+    <Content Include="images\helpTextImages\LTT Tax Status.bmp" />
+    <Content Include="images\helpTextImages\map1.bmp" />
+    <Content Include="images\helpTextImages\map10.bmp" />
+    <Content Include="images\helpTextImages\map11.bmp" />
+    <Content Include="images\helpTextImages\map12.bmp" />
+    <Content Include="images\helpTextImages\map13.bmp" />
+    <Content Include="images\helpTextImages\map14.bmp" />
+    <Content Include="images\helpTextImages\map15.bmp" />
+    <Content Include="images\helpTextImages\map16.bmp" />
+    <Content Include="images\helpTextImages\map17.bmp" />
+    <Content Include="images\helpTextImages\map18.bmp" />
+    <Content Include="images\helpTextImages\map19.bmp" />
+    <Content Include="images\helpTextImages\map2.bmp" />
+    <Content Include="images\helpTextImages\map20.bmp" />
+    <Content Include="images\helpTextImages\map21.bmp" />
+    <Content Include="images\helpTextImages\map22.bmp" />
+    <Content Include="images\helpTextImages\map23.bmp" />
+    <Content Include="images\helpTextImages\map24.bmp" />
+    <Content Include="images\helpTextImages\map25.bmp" />
+    <Content Include="images\helpTextImages\map26.bmp" />
+    <Content Include="images\helpTextImages\map3.bmp" />
+    <Content Include="images\helpTextImages\map30.bmp" />
+    <Content Include="images\helpTextImages\map31.bmp" />
+    <Content Include="images\helpTextImages\map4.bmp" />
+    <Content Include="images\helpTextImages\map5.bmp" />
+    <Content Include="images\helpTextImages\map6.bmp" />
+    <Content Include="images\helpTextImages\map7.bmp" />
+    <Content Include="images\helpTextImages\map8.bmp" />
+    <Content Include="images\helpTextImages\map9.bmp" />
+    <Content Include="images\helpTextImages\munID.bmp" />
+    <Content Include="images\helpTextImages\new.bmp" />
+    <Content Include="images\helpTextImages\potash typemun.bmp" />
+    <Content Include="images\helpTextImages\satrtscreen.bmp" />
+    <Content Include="images\helpTextImages\Securityquestion.bmp" />
+    <Content Include="images\helpTextImages\select boundary type.bmp" />
+    <Content Include="images\helpTextImages\stats date.bmp" />
+    <Content Include="images\helpTextImages\stats report.bmp" />
+    <Content Include="images\helpTextImages\subNavRight.gif" />
+    <Content Include="images\helpTextImages\tab jur type.jpg" />
+    <Content Include="images\helpTextImages\tab tax class.jpg" />
+    <Content Include="images\helpTextImages\Tax Class-main class.bmp" />
+    <Content Include="images\helpTextImages\Tax Class-present use codes.bmp" />
+    <Content Include="images\helpTextImages\Tax Class-tax status.bmp" />
+    <Content Include="images\helpTextImages\Tax Entity-Juris. Type.bmp" />
+    <Content Include="images\helpTextImages\Tax Entity-Juris..bmp" />
+    <Content Include="images\helpTextImages\tax status button.JPG" />
+    <Content Include="images\helpTextImages\Tax Year model-year.bmp" />
+    <Content Include="images\helpTextImages\testimage.jpg" />
+    <Content Include="images\helpTextImages\Toco Toucan.jpg" />
+    <Content Include="images\helpTextImages\upload images.bmp" />
+    <Content Include="images\helpTextImages\User Groups-user-members.bmp" />
+    <Content Include="images\helpTextImages\User ProfileProvince.bmp" />
+    <Content Include="images\helpTextImages\View ass and tax - school div..bmp" />
+    <Content Include="images\helpTextImages\View ass and tax-data set name.bmp" />
+    <Content Include="images\helpTextImages\View ass and tax-munici.bmp" />
+    <Content Include="images\helpTextImages\View ass and tax-tax class.bmp" />
+    <Content Include="images\helpTextImages\view data set-data set name.bmp" />
+    <Content Include="images\helpTextImages\view data set-data source.bmp" />
+    <Content Include="images\helpTextImages\View Mill-jurisdiction.bmp" />
+    <Content Include="images\helpTextImages\View Mill-radio.bmp" />
+    <Content Include="images\helpTextImages\View Mill-type.bmp" />
+    <Content Include="images\helpTextImages\View scenario-audience.bmp" />
+    <Content Include="images\helpTextImages\View scenario-base tax.bmp" />
+    <Content Include="images\helpTextImages\View scenario-date.bmp" />
+    <Content Include="images\helpTextImages\View scenario-subject year.bmp" />
+    <Content Include="images\helpTextImages\View scenario-user.bmp" />
+    <Content Include="images\helpTextImages\view tax cred-data set name.bmp" />
+    <Content Include="images\helpTextImages\view tax cred-school div..bmp" />
+    <Content Include="images\helpTextImages\view tax cred-tax class..bmp" />
+    <Content Include="images\helpTextImages\view users level.bmp" />
+    <Content Include="images\helpTextImages\View Users-user group.bmp" />
+    <Content Include="images\ISC_ProvincialBoundary.gif" />
+    <Content Include="images\ISC_Surface_nonzero_IDs.gif" />
+    <Content Include="images\Lakes_Background.gif" />
+    <Content Include="images\mainBackground.gif" />
+    <Content Include="images\measure.gif" />
+    <Content Include="images\Municipalities_Analysis.gif" />
+    <Content Include="images\Municipalities_Background.gif" />
+    <Content Include="images\pointer2.gif" />
+    <Content Include="images\print2.gif" />
+    <Content Include="images\Provincial_Boundary_Background.gif" />
+    <Content Include="images\railline.gif" />
+    <Content Include="images\railline_background.gif" />
+    <Content Include="images\Roads_Background.gif" />
+    <Content Include="images\rowSpacer.gif" />
+    <Content Include="images\SchoolDivisions_Analysis.gif" />
+    <Content Include="images\SchoolDivisions_Background.gif" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="images\StatsCan_Lakes.gif" />
+    <Content Include="images\StatsCan_Roads.gif" />
+    <Content Include="images\subNavBackground.gif" />
+    <Content Include="images\subNavDivider.gif" />
+    <Content Include="images\subNavLeft.gif" />
+    <Content Include="images\subNavLeftOn.gif" />
+    <Content Include="images\subNavRight.gif" />
+    <Content Include="images\subNavRightOn.gif" />
+    <Content Include="images\topRightCorner.gif" />
+    <Content Include="images\UnmatchedParcels.gif" />
+    <Content Include="images\unzoom.gif" />
+    <Content Include="images\update.png" />
+    <Content Include="images\wait-image.gif" />
+    <Content Include="images\wait.gif" />
+    <Content Include="images\wells_background.gif" />
+    <Content Include="images\zoompre2.gif" />
+    <Content Include="includes\Email.html" />
+    <Content Include="includes\governmentLogonew.jpg" />
+    <Content Include="index.aspx" />
+    <Content Include="initdwfctrl.js" />
+    <Content Include="jquery-3.4.1.min.js" />
+    <Content Include="js\general.js" />
+    <Content Include="jxlib.js" />
+    <Content Include="Layer.aspx" />
+    <Content Include="legend.js" />
+    <Content Include="logout.aspx" />
+    <Content Include="Map.aspx" />
+    <Content Include="MapCalculate.aspx" />
+    <Content Include="MapContainer.aspx" />
+    <Content Include="MapControls.aspx" />
+    <Content Include="MapError.aspx" />
+    <Content Include="MapFunctions.js" />
+    <Content Include="MapInformation.aspx" />
+    <Content Include="mapping.css" />
+    <Content Include="MyPanel.aspx" />
+    <Content Include="numfmt.js" />
+    <Content Include="ParcelThemes.ascx" />
+    <Content Include="pngfix_map.js" />
+    <Content Include="privacy.aspx" />
+    <Content Include="ProgressStyle.css" />
+    <Content Include="quickplot.js" />
+    <Content Include="quickplotpanel.js" />
+    <Content Include="quickplotpreview.js" />
+    <Content Include="QuickZoom.ascx" />
+    <Content Include="RemoteMapFunctions.js" />
+    <Content Include="Reports.ascx" />
+    <Content Include="Reports.ascx.cs" />
+    <Content Include="Reports.ascx.designer.cs" />
+    <Content Include="Reports.js" />
+    <Content Include="sarissa.js" />
+    <Content Include="signup.aspx" />
+    <Content Include="SSIS\K12ToSQL.dtsConfig" />
+    <Content Include="synchronize.aspx" />
+    <Content Include="sysadmin\editfunctions.aspx" />
+    <Content Include="sysadmin\editgroup.aspx" />
+    <Content Include="sysadmin\edithelperr.aspx" />
+    <Content Include="sysadmin\edithelpfield.aspx" />
+    <Content Include="sysadmin\edithelpscreen.aspx" />
+    <Content Include="sysadmin\editlevel.aspx" />
+    <Content Include="sysadmin\editreports.aspx" />
+    <Content Include="sysadmin\edituser.aspx" />
+    <Content Include="sysadmin\viewfunctions.aspx" />
+    <Content Include="sysadmin\viewgroups.aspx" />
+    <Content Include="sysadmin\viewhelperr.aspx" />
+    <Content Include="sysadmin\viewhelpfield.aspx" />
+    <Content Include="sysadmin\viewHelpImages.aspx" />
+    <Content Include="sysadmin\viewhelpscreen.aspx" />
+    <Content Include="sysadmin\viewlevels.aspx" />
+    <Content Include="sysadmin\viewreports.aspx" />
+    <Content Include="sysadmin\viewsysstat.aspx" />
+    <Content Include="sysadmin\viewusers.aspx" />
+    <Content Include="tabmenu.ascx" />
+    <Content Include="taxtools\basetax.aspx" />
+    <Content Include="taxtools\baseyear.aspx" />
+    <Content Include="taxtools\graphs.aspx" />
+    <Content Include="taxtools\LTTviewReport.aspx" />
+    <Content Include="taxtools\main.aspx" />
+    <Content Include="taxtools\Map.aspx" />
+    <Content Include="taxtools\mintax.aspx" />
+    <Content Include="taxtools\mrfactors.aspx" />
+    <Content Include="taxtools\phasein.aspx" />
+    <Content Include="taxtools\starttax.aspx" />
+    <Content Include="taxtools\tables.aspx" />
+    <Content Include="UpgradeLog.htm" />
+    <Content Include="userprofile.aspx" />
+    <Content Include="util.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WebForm2.aspx" />
+    <Content Include="WebForm3.aspx" />
+    <Content Include="wz_jsgraphics.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="assmnt\audittrail.aspx.designer.vb">
+      <DependentUpon>audittrail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\audittrail.aspx.vb">
+      <DependentUpon>audittrail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\classes.aspx.designer.vb">
+      <DependentUpon>classes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\classes.aspx.vb">
+      <DependentUpon>classes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\controls\header.ascx.designer.vb">
+      <DependentUpon>header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\controls\header.ascx.vb">
+      <DependentUpon>header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\edpov.aspx.designer.vb">
+      <DependentUpon>edpov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\edpov.aspx.vb">
+      <DependentUpon>edpov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\general.aspx.designer.vb">
+      <DependentUpon>general.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\general.aspx.vb">
+      <DependentUpon>general.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\graphs.aspx.designer.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\graphs.aspx.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\kog.aspx.designer.vb">
+      <DependentUpon>kog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\kog.aspx.vb">
+      <DependentUpon>kog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\millrate.aspx.designer.vb">
+      <DependentUpon>millrate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\millrate.aspx.vb">
+      <DependentUpon>millrate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\pemr.aspx.designer.vb">
+      <DependentUpon>pemr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\pemr.aspx.vb">
+      <DependentUpon>pemr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\pov.aspx.designer.vb">
+      <DependentUpon>pov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\pov.aspx.vb">
+      <DependentUpon>pov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\start.aspx.designer.vb">
+      <DependentUpon>start.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\start.aspx.vb">
+      <DependentUpon>start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\tables.aspx.designer.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\tables.aspx.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\taxcredits.aspx.designer.vb">
+      <DependentUpon>taxcredits.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\taxcredits.aspx.vb">
+      <DependentUpon>taxcredits.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\taxstatus.aspx.designer.vb">
+      <DependentUpon>taxstatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\taxstatus.aspx.vb">
+      <DependentUpon>taxstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="assmnt\viewReport.aspx.designer.vb">
+      <DependentUpon>viewReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assmnt\viewReport.aspx.vb">
+      <DependentUpon>viewReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\classes.aspx.designer.vb">
+      <DependentUpon>classes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\classes.aspx.vb">
+      <DependentUpon>classes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\graphs.aspx.designer.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\graphs.aspx.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\linearproperty.aspx.designer.vb">
+      <DependentUpon>linearproperty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\linearproperty.aspx.vb">
+      <DependentUpon>linearproperty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\main.aspx.designer.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\main.aspx.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\tables.aspx.designer.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\tables.aspx.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\taxStatusBoundary.aspx.designer.vb">
+      <DependentUpon>taxStatusBoundary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\taxStatusBoundary.aspx.vb">
+      <DependentUpon>taxStatusBoundary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="boundary\viewReportBoundary.aspx.designer.vb">
+      <DependentUpon>viewReportBoundary.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="boundary\viewReportBoundary.aspx.vb">
+      <DependentUpon>viewReportBoundary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="common.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\datatabmenu.ascx.designer.vb" />
+    <Compile Include="datamgnt\editassessment.aspx.designer.vb">
+      <DependentUpon>editassessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editassessment.aspx.vb">
+      <DependentUpon>editassessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editboundarymodel.aspx.designer.vb">
+      <DependentUpon>editboundarymodel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editboundarymodel.aspx.vb">
+      <DependentUpon>editboundarymodel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editdataset.aspx.designer.vb">
+      <DependentUpon>editdataset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editdataset.aspx.vb">
+      <DependentUpon>editdataset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editjuristype.aspx.designer.vb">
+      <DependentUpon>editjuristype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editjuristype.aspx.vb">
+      <DependentUpon>editjuristype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editkog.aspx.designer.vb">
+      <DependentUpon>editkog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editkog.aspx.vb">
+      <DependentUpon>editkog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editlttrollup.aspx.designer.vb">
+      <DependentUpon>editlttrollup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editlttrollup.aspx.vb">
+      <DependentUpon>editlttrollup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editmillrate.aspx.designer.vb">
+      <DependentUpon>editmillrate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editmillrate.aspx.vb">
+      <DependentUpon>editmillrate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editpemr.aspx.designer.vb">
+      <DependentUpon>editpemr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editpemr.aspx.vb">
+      <DependentUpon>editpemr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editpemrtaxclass.aspx.designer.vb">
+      <DependentUpon>editpemrtaxclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editpemrtaxclass.aspx.vb">
+      <DependentUpon>editpemrtaxclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editpotash.aspx.designer.vb">
+      <DependentUpon>editpotash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editpotash.aspx.vb">
+      <DependentUpon>editpotash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editpov.aspx.designer.vb">
+      <DependentUpon>editpov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editpov.aspx.vb">
+      <DependentUpon>editpov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\editpropcode.aspx.designer.vb">
+      <DependentUpon>editpropcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\editpropcode.aspx.vb">
+      <DependentUpon>editpropcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\edittaxclass.aspx.designer.vb">
+      <DependentUpon>edittaxclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\edittaxclass.aspx.vb">
+      <DependentUpon>edittaxclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\edittaxcredit.aspx.designer.vb">
+      <DependentUpon>edittaxcredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\edittaxcredit.aspx.vb">
+      <DependentUpon>edittaxcredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\edittaxentity.aspx.designer.vb">
+      <DependentUpon>edittaxentity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\edittaxentity.aspx.vb">
+      <DependentUpon>edittaxentity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\edittaxstatus.aspx.designer.vb">
+      <DependentUpon>edittaxstatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\edittaxstatus.aspx.vb">
+      <DependentUpon>edittaxstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\edittaxyearmodel.aspx.designer.vb">
+      <DependentUpon>edittaxyearmodel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\edittaxyearmodel.aspx.vb">
+      <DependentUpon>edittaxyearmodel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\export.aspx.designer.vb">
+      <DependentUpon>export.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\export.aspx.vb">
+      <DependentUpon>export.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadassessment.aspx.designer.vb">
+      <DependentUpon>loadassessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadassessment.aspx.vb">
+      <DependentUpon>loadassessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadkog.aspx.designer.vb">
+      <DependentUpon>loadkog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadkog.aspx.vb">
+      <DependentUpon>loadkog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadmillrate.aspx.designer.vb">
+      <DependentUpon>loadmillrate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadmillrate.aspx.vb">
+      <DependentUpon>loadmillrate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadmunicipal.aspx.designer.vb">
+      <DependentUpon>loadmunicipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadmunicipal.aspx.vb">
+      <DependentUpon>loadmunicipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadpemr.aspx.designer.vb">
+      <DependentUpon>loadpemr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadpemr.aspx.vb">
+      <DependentUpon>loadpemr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadpotash.aspx.designer.vb">
+      <DependentUpon>loadpotash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadpotash.aspx.vb">
+      <DependentUpon>loadpotash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\loadschool.aspx.designer.vb">
+      <DependentUpon>loadschool.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\loadschool.aspx.vb">
+      <DependentUpon>loadschool.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\sorttaxclass.aspx.designer.vb">
+      <DependentUpon>sorttaxclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\sorttaxclass.aspx.vb">
+      <DependentUpon>sorttaxclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewassessment.aspx.designer.vb">
+      <DependentUpon>viewassessment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewassessment.aspx.vb">
+      <DependentUpon>viewassessment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewboundarymodel.aspx.designer.vb">
+      <DependentUpon>viewboundarymodel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewboundarymodel.aspx.vb">
+      <DependentUpon>viewboundarymodel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewdataset.aspx.designer.vb">
+      <DependentUpon>viewdataset.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewdataset.aspx.vb">
+      <DependentUpon>viewdataset.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewjuristype.aspx.designer.vb">
+      <DependentUpon>viewjuristype.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewjuristype.aspx.vb">
+      <DependentUpon>viewjuristype.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewkog.aspx.designer.vb">
+      <DependentUpon>viewkog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewkog.aspx.vb">
+      <DependentUpon>viewkog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewlttrollup.aspx.designer.vb">
+      <DependentUpon>viewlttrollup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewlttrollup.aspx.vb">
+      <DependentUpon>viewlttrollup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewmillrate.aspx.designer.vb">
+      <DependentUpon>viewmillrate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewmillrate.aspx.vb">
+      <DependentUpon>viewmillrate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpemr.aspx.designer.vb">
+      <DependentUpon>viewpemr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpemr.aspx.vb">
+      <DependentUpon>viewpemr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpemrtaxclass.aspx.designer.vb">
+      <DependentUpon>viewpemrtaxclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpemrtaxclass.aspx.vb">
+      <DependentUpon>viewpemrtaxclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpemrtiers.aspx.designer.vb">
+      <DependentUpon>viewpemrtiers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpemrtiers.aspx.vb">
+      <DependentUpon>viewpemrtiers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpotash.aspx.designer.vb">
+      <DependentUpon>viewpotash.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpotash.aspx.vb">
+      <DependentUpon>viewpotash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpov.aspx.designer.vb">
+      <DependentUpon>viewpov.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpov.aspx.vb">
+      <DependentUpon>viewpov.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewpropcode.aspx.designer.vb">
+      <DependentUpon>viewpropcode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewpropcode.aspx.vb">
+      <DependentUpon>viewpropcode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewscenario.aspx.designer.vb">
+      <DependentUpon>viewscenario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewscenario.aspx.vb">
+      <DependentUpon>viewscenario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxclass.aspx.designer.vb">
+      <DependentUpon>viewtaxclass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxclass.aspx.vb">
+      <DependentUpon>viewtaxclass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxcredit.aspx.designer.vb">
+      <DependentUpon>viewtaxcredit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxcredit.aspx.vb">
+      <DependentUpon>viewtaxcredit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxentity.aspx.designer.vb">
+      <DependentUpon>viewtaxentity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxentity.aspx.vb">
+      <DependentUpon>viewtaxentity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxstatus.aspx.designer.vb">
+      <DependentUpon>viewtaxstatus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxstatus.aspx.vb">
+      <DependentUpon>viewtaxstatus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxyearmodel.aspx.designer.vb">
+      <DependentUpon>viewtaxyearmodel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datamgnt\viewtaxyearmodel.aspx.vb">
+      <DependentUpon>viewtaxyearmodel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="disclaimer.aspx.designer.vb">
+      <DependentUpon>disclaimer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="disclaimer.aspx.vb">
+      <DependentUpon>disclaimer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="downloadfile.aspx.designer.vb">
+      <DependentUpon>downloadfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="downloadfile.aspx.vb">
+      <DependentUpon>downloadfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="error.aspx.designer.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="error.aspx.vb">
+      <DependentUpon>error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="fileuploadhandler.ashx.vb">
+      <DependentUpon>fileuploadhandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.designer.vb">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="forgotpassword.aspx.vb">
+      <DependentUpon>forgotpassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.designer.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="help.aspx.vb">
+      <DependentUpon>help.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.vb">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Impersonate.vb" />
+    <Compile Include="index.aspx.designer.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.vb">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.vb">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapCalculate.aspx.designer.vb">
+      <DependentUpon>MapCalculate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapCalculate.aspx.vb">
+      <DependentUpon>MapCalculate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MapInformation.aspx.designer.vb">
+      <DependentUpon>MapInformation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MapInformation.aspx.vb">
+      <DependentUpon>MapInformation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.master.designer.vb">
+      <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.master.vb">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="menu.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="MyPanel.aspx.designer.vb">
+      <DependentUpon>MyPanel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyPanel.aspx.vb">
+      <DependentUpon>MyPanel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoLogin.master.designer.vb">
+      <DependentUpon>NoLogin.master</DependentUpon>
+    </Compile>
+    <Compile Include="NoLogin.master.vb">
+      <DependentUpon>NoLogin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="privacy.aspx.designer.vb">
+      <DependentUpon>privacy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="privacy.aspx.vb">
+      <DependentUpon>privacy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.ascx.designer.vb">
+      <DependentUpon>Reports.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.ascx.vb">
+      <DependentUpon>Reports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="reportServerCredentials.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="signup.aspx.designer.vb">
+      <DependentUpon>signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="signup.aspx.vb">
+      <DependentUpon>signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SqlDbAccess.vb" />
+    <Compile Include="SymmCrypto.vb" />
+    <Compile Include="synchronize.aspx.designer.vb">
+      <DependentUpon>synchronize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="synchronize.aspx.vb">
+      <DependentUpon>synchronize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\editfunctions.aspx.designer.vb">
+      <DependentUpon>editfunctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\editfunctions.aspx.vb">
+      <DependentUpon>editfunctions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\editgroup.aspx.designer.vb">
+      <DependentUpon>editgroup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\editgroup.aspx.vb">
+      <DependentUpon>editgroup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\edithelperr.aspx.designer.vb">
+      <DependentUpon>edithelperr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\edithelperr.aspx.vb">
+      <DependentUpon>edithelperr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\edithelpfield.aspx.designer.vb">
+      <DependentUpon>edithelpfield.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\edithelpfield.aspx.vb">
+      <DependentUpon>edithelpfield.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\edithelpscreen.aspx.designer.vb">
+      <DependentUpon>edithelpscreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\edithelpscreen.aspx.vb">
+      <DependentUpon>edithelpscreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\editlevel.aspx.designer.vb">
+      <DependentUpon>editlevel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\editlevel.aspx.vb">
+      <DependentUpon>editlevel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\editreports.aspx.designer.vb">
+      <DependentUpon>editreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\editreports.aspx.vb">
+      <DependentUpon>editreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\edituser.aspx.designer.vb">
+      <DependentUpon>edituser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\edituser.aspx.vb">
+      <DependentUpon>edituser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\systabmenu.ascx.designer.vb" />
+    <Compile Include="sysadmin\viewfunctions.aspx.designer.vb">
+      <DependentUpon>viewfunctions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewfunctions.aspx.vb">
+      <DependentUpon>viewfunctions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewgroups.aspx.designer.vb">
+      <DependentUpon>viewgroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewgroups.aspx.vb">
+      <DependentUpon>viewgroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewhelperr.aspx.designer.vb">
+      <DependentUpon>viewhelperr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewhelperr.aspx.vb">
+      <DependentUpon>viewhelperr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewhelpfield.aspx.designer.vb">
+      <DependentUpon>viewhelpfield.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewhelpfield.aspx.vb">
+      <DependentUpon>viewhelpfield.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewHelpImages.aspx.designer.vb">
+      <DependentUpon>viewHelpImages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewHelpImages.aspx.vb">
+      <DependentUpon>viewHelpImages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewhelpscreen.aspx.designer.vb">
+      <DependentUpon>viewhelpscreen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewhelpscreen.aspx.vb">
+      <DependentUpon>viewhelpscreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewlevels.aspx.designer.vb">
+      <DependentUpon>viewlevels.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewlevels.aspx.vb">
+      <DependentUpon>viewlevels.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewreports.aspx.designer.vb">
+      <DependentUpon>viewreports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewreports.aspx.vb">
+      <DependentUpon>viewreports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewsysstat.aspx.designer.vb">
+      <DependentUpon>viewsysstat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewsysstat.aspx.vb">
+      <DependentUpon>viewsysstat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sysadmin\viewusers.aspx.designer.vb">
+      <DependentUpon>viewusers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sysadmin\viewusers.aspx.vb">
+      <DependentUpon>viewusers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tabmenu.ascx.designer.vb">
+      <DependentUpon>tabmenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="tabmenu.ascx.vb">
+      <DependentUpon>tabmenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\basetax.aspx.designer.vb">
+      <DependentUpon>basetax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\basetax.aspx.vb">
+      <DependentUpon>basetax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\baseyear.aspx.designer.vb">
+      <DependentUpon>baseyear.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\baseyear.aspx.vb">
+      <DependentUpon>baseyear.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\graphs.aspx.designer.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\graphs.aspx.vb">
+      <DependentUpon>graphs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\LTTviewReport.aspx.designer.vb">
+      <DependentUpon>LTTviewReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\LTTviewReport.aspx.vb">
+      <DependentUpon>LTTviewReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\main.aspx.designer.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\main.aspx.vb">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\mintax.aspx.designer.vb">
+      <DependentUpon>mintax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\mintax.aspx.vb">
+      <DependentUpon>mintax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\mrfactors.aspx.designer.vb">
+      <DependentUpon>mrfactors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\mrfactors.aspx.vb">
+      <DependentUpon>mrfactors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\phasein.aspx.designer.vb">
+      <DependentUpon>phasein.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\phasein.aspx.vb">
+      <DependentUpon>phasein.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\starttax.aspx.designer.vb">
+      <DependentUpon>starttax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\starttax.aspx.vb">
+      <DependentUpon>starttax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="taxtools\tables.aspx.designer.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="taxtools\tables.aspx.vb">
+      <DependentUpon>tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload.vb" />
+    <Compile Include="userprofile.aspx.designer.vb">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="userprofile.aspx.vb">
+      <DependentUpon>userprofile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Web References\PATMAPWebService\Reference.vb" />
+    <Compile Include="WebForm1.aspx.designer.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.vb">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.vb">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.vb">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="WebForm3.aspx.designer.vb">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm3.aspx.vb">
+      <DependentUpon>WebForm3.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.master" />
+    <Content Include="assmnt\controls\vssver2.scc" />
+    <Content Include="fileuploadhandler.ashx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Web References\PATMAPWebService\ActiveState.datasource" />
+    <Content Include="Web References\PATMAPWebService\CatalogItem.datasource" />
+    <Content Include="Web References\PATMAPWebService\DataRetrievalPlan.datasource" />
+    <Content Include="Web References\PATMAPWebService\DataSetDefinition.datasource" />
+    <Content Include="Web References\PATMAPWebService\DataSource.datasource" />
+    <Content Include="Web References\PATMAPWebService\DataSourceDefinition.datasource" />
+    <Content Include="Web References\PATMAPWebService\DataSourcePrompt.datasource" />
+    <Content Include="Web References\PATMAPWebService\Event.datasource" />
+    <Content Include="Web References\PATMAPWebService\ExecutionSettingEnum.datasource" />
+    <Content Include="Web References\PATMAPWebService\ExpirationDefinition.datasource" />
+    <Content Include="Web References\PATMAPWebService\Extension.datasource" />
+    <Content Include="Web References\PATMAPWebService\ExtensionParameter.datasource" />
+    <Content Include="Web References\PATMAPWebService\ExtensionSettings.datasource" />
+    <Content Include="Web References\PATMAPWebService\ItemTypeEnum.datasource" />
+    <Content Include="Web References\PATMAPWebService\Job.datasource" />
+    <Content Include="Web References\PATMAPWebService\ModelCatalogItem.datasource" />
+    <Content Include="Web References\PATMAPWebService\ModelDrillthroughReport.datasource" />
+    <Content Include="Web References\PATMAPWebService\ModelItem.datasource" />
+    <Content Include="Web References\PATMAPWebService\ParameterValue.datasource" />
+    <Content Include="Web References\PATMAPWebService\ParameterValueOrFieldReference.datasource" />
+    <Content Include="Web References\PATMAPWebService\Policy.datasource" />
+    <Content Include="Web References\PATMAPWebService\Property.datasource" />
+    <Content Include="Web References\PATMAPWebService\Reference.map" />
+    <Content Include="Web References\PATMAPWebService\ReportHistorySnapshot.datasource" />
+    <Content Include="Web References\PATMAPWebService\ReportParameter.datasource" />
+    <Content Include="SSIS\Access2SQL.dtsx" />
+    <Content Include="SSIS\K12ToSQL.dtsx" />
+    <Content Include="SSIS\MappingToSQL.dtsx" />
+    <Content Include="SSIS\MillRateToSQL.dtsx" />
+    <Content Include="SSIS\MunicipalToSQL.dtsx" />
+    <Content Include="SSIS\PotashToSQL.dtsx" />
+    <Content Include="SSIS\SchoolToSQL.dtsx" />
+    <Content Include="NoLogin.master" />
+    <None Include="Web References\PATMAPWebService\ReportService2005.wsdl" />
+    <Content Include="Web References\PATMAPWebService\Role.datasource" />
+    <Content Include="Web References\PATMAPWebService\Schedule.datasource" />
+    <Content Include="Web References\PATMAPWebService\ScheduleDefinitionOrReference.datasource" />
+    <Content Include="Web References\PATMAPWebService\Subscription.datasource" />
+    <Content Include="Web References\PATMAPWebService\Task.datasource" />
+    <Content Include="Web References\PATMAPWebService\Warning.datasource" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60249</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://192.168.90.50/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,780 @@
+﻿body 
+{
+	background-color: #ffffff;
+	margin: 0px;
+	font-family: Arial;
+	font-size: 12px;		
+}
+
+a
+{
+	text-decoration: none;
+	color: #8e816a;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+img
+{
+	border: 0px;	
+}
+
+.clear
+{
+	clear: both;	
+}
+
+/** Page Header **/
+
+#header
+{
+	background-color: #ffffff;	
+	height: 66px;				
+}
+
+#logo
+{
+	display: block;
+	margin: 10px 0px 10px 0px;
+	float: left;		
+}
+
+#govLink
+{
+	width: 200px;
+	margin: 10px 0px 10px 0px;
+	float: right;	
+	text-align: right;		
+}
+
+#govLink a, #govLink a:hover
+{
+	font-size: 11px;
+	color: #E7A72F;
+}
+
+#barLeft
+{
+	background: url('../images/hdrLeftBackground.jpg') no-repeat top left;
+	float: left;
+	width: 769px;
+	height: 50px;	
+}
+
+#barRight
+{
+	background: url('../images/hdrRightBackground.jpg') no-repeat top left;
+	float: right;
+	width: 187px;
+	height: 50px;
+}
+
+#appName
+{
+	font-size: 20px;
+	color: #ffffff;
+	padding: 10px 0px 5px 10px;	
+}
+
+#barRight div
+{
+	font-size: 10px;
+	color: #ffffff;
+	padding: 5px 10px 5px 10px;
+	text-align: right;
+}
+
+/** Main Navigation **/
+
+#nav
+{
+	background-color: #A09382;	
+	vertical-align: top;
+	padding: 10px 0px 20px 10px;
+	width: 110px;	
+	float: left;
+}
+
+.Level1Style
+{
+	width: 118px; 
+	font-size: 14px;
+	color: #ffffff;	
+	padding-bottom: 10px;
+	padding-right: 7px;	
+}
+
+.Level1Style a
+{
+	text-decoration: none;
+	background: none;
+}
+
+.Level1Style a:hover
+{
+	text-decoration: none;
+	background: none;
+}
+
+.Level1Style img
+{
+	display: none;
+}
+
+.Level1StyleHover
+{
+	color: Black;
+}
+
+.Level1StyleSelected
+{
+	background: url('../images/arrow.gif') no-repeat 100% 25%;	
+}
+
+.ctl00_mainMenu_11
+{
+	border: solid 1px black;	
+}
+
+.ctl00_mainMenu_0
+{
+	width: 130px;
+	background-color: #A09382 !important;
+	padding: 5px 0px 0px 8px;			
+}
+
+.Level2Style
+{
+	width: 130px; 
+	font-size: 14px;
+	color: #ffffff;		
+	background-color: #A09382;
+	padding: 0px 5px 5px 0px;	
+}
+
+.Level2Style a
+{
+	text-decoration: none;		
+}
+
+.Level2Style a:hover
+{
+	text-decoration: none;		
+}
+
+.Level2StyleHover
+{
+	color: Black;
+}
+
+.subMenu
+{
+	background: url('../images/subNavBackground.gif') repeat-x;	
+	height: 25px;
+}
+
+.subMenuItem
+{
+	padding: 4px 4px 4px 4px;
+	text-align: center;		
+}
+
+.subMenuItem img
+{
+	display: none;		
+}
+
+.subMenuItem a
+{
+	font-size: 12.5px;
+	color: #000000;	
+	font-weight: bold;
+	text-decoration: none;		
+}
+
+.subMenuItem a:hover
+{
+	text-decoration: none;		
+}
+
+.subMenuSelected
+{	
+	background-color: #DBBF56;
+}
+
+.ctl00_tabMenu_subMenu_subMenu_0
+{
+	padding: 5px 10px 0px 10px;		
+	border: solid 2px #DBBF56;
+	width: 75px;
+}
+
+.subMenuLevel2
+{
+	padding: 0px 0px 5px 0px;
+}
+
+.subMenuLevel2 a
+{
+	font-size: 12.5px;
+	color: #000000;		
+	text-decoration: none;	
+}
+
+.subMenuLevel2 a:hover
+{	
+	text-decoration: none;	
+}
+
+/** Container and Template **/
+
+#main
+{
+	margin: 0px 0px 0px 10px;
+	width: 956px;
+	background: url('../images/mainBackground.gif') repeat-y;			
+}
+
+#loginMain
+{
+	margin: 0px 0px 0px 10px;
+	width: 956px;		
+}
+
+#mainContainer
+{
+	padding: 20px 0px 50px 0px;
+	float: right;
+	width: 820px;
+	font-size: 12px;		
+}
+
+#pathContainer
+{
+	width: 98%;	
+	height: 20px;
+	padding-bottom: 5px;		
+}
+
+.pathSepartor
+{
+	color: #8e816a;
+}
+
+#tabmenuContainer
+{
+	width: 90%;		
+	padding: 15px 0px 15px 30px;			
+}
+
+#ctl00_breadcrumbs
+{
+	float: right;		
+}
+
+.patmapDisclaimer
+{
+	width: 95%;				
+	padding: 0px 0px 0px 85%;	
+}
+
+.commonContent
+{
+	width: 95%;		
+	padding: 15px 0px 15px 30px;					
+}
+
+/** Footer **/
+
+#footer
+{
+	background: #A09382;	
+	font-size: 11px;
+	color: #ffffff;
+	text-align: center;
+	padding: 8px 0px 8px 0px;	
+}
+
+#footer a
+{
+	text-decoration: none;	
+	font-size: 11px;
+	color: #ffffff;		
+}
+
+.footerSeparator
+{
+	padding: 0px 5px 0px 5px;
+}
+
+/** Titles **/
+
+.PageHeaderModule .Header
+{
+	background-image: url('../images/550pxTitleBar.png');		
+}
+
+.Header
+{
+	background-position: left top;
+	background-repeat: repeat-y;
+	border-bottom: solid 1px #A09382;
+	background-color: #DEC15D;	
+}
+
+.Header .Title
+{
+	background-image: url('../images/topRightCorner.gif');
+	background-position: right top;
+	background-repeat: no-repeat;
+}
+
+.Header .Title
+{
+	font-size: 12px;
+	margin:0px;
+	padding:7px 10px 1px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color:black;
+}
+
+.commonHeader
+{
+	width: 95%;
+	text-align: left;	
+}
+
+.subHeader
+{
+	border: solid 1px #B09430;
+	background-color: #F4E8BB;
+	padding: 3px 10px 3px 10px;
+	text-transform: uppercase;
+	width: 90%;
+	margin: 10px 0px 5px 0px;
+}
+
+.viewReportSubHeader
+{
+	border: solid 1px #B09430;
+	padding: 3px 0px 3px 0px;		
+	background-color: #F4E8BB;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.pHead
+{
+	font-size: 14px;
+	font-weight: bold;	
+}
+
+/** Form and Form Elements **/
+
+form
+{
+	margin: 0px;	
+}
+
+.commonForm
+{	
+	padding: 15px 25px 25px 25px;	
+	width: 90%;
+	text-align: left;	
+}
+
+.viewReportCommonForm
+{	
+	padding: 25px 10px 25px 10px;		
+	width: 98%;
+	text-align: center 	
+}
+
+.label
+{
+	padding-bottom: 10px;	
+	vertical-align: top;
+	text-align: left;
+}
+
+.field
+{
+	padding-left: 30px;	
+	padding-bottom: 10px;
+	vertical-align: top;
+	text-align: left;	
+	white-space: nowrap;
+}
+
+.requiredField
+{
+	color: Red;	
+}
+
+.txtNormal
+{
+	width: 200px;	
+}
+
+.txtLong
+{
+	width: 300px;	
+}
+
+.txtArea
+{
+	width: 350px;
+	height: 60px;	
+}
+
+.errorText
+{
+	color: Red;		
+	text-align: center;	
+}
+
+.viewReportErrorText
+{
+	color: Red;		
+	padding: 15px 0px 15px 0px;
+	text-align: center;	
+}
+
+.btnsBottom
+{
+	padding: 20px 0px 20px 0px;	
+}
+
+.btns
+{
+	padding: 0px 5px 0px 8px;	
+	vertical-align: top;
+}
+
+.btnsTop
+{
+	float:right;	
+}
+
+.grdLgStyle
+{
+	padding: 5px;	
+	width: 92%;
+	margin: 5px 0px 10px 0px;
+	border: solid 1px White;
+}
+
+.grdSmStyle
+{
+	padding: 5px;	
+	margin: 5px 0px 10px 0px;
+	border: solid 1px White;
+}
+
+.grdPage td
+{	
+	padding: 0px;		
+}
+
+.grdPage table td
+{	
+	border: solid 1px #B09430;
+	background-color: #F4E8BB;	
+	padding: 2px 3px 2px 3px;			
+}
+
+.totalCount
+{
+	border: solid 1px #B09430;
+	background-color: #F4E8BB;	
+	padding: 2px 8px 2px 8px;	
+	width: 90.5%;			
+}
+
+.grdSmStyle
+{
+	padding: 5px;	
+	width: 100%;
+}
+
+.colHeader
+{
+	background-color: #B09430;	
+	font-weight: bold;
+	color: White;
+	text-align: center;	
+}
+
+.colHeader a
+{		
+	font-weight: bold;
+	color: White;	
+}
+
+.alertnateRow
+{
+	background-color: #F4E8BB;
+}
+
+.colEdit
+{
+	width: 35px;	
+}
+
+.colDelete
+{
+	width: 55px;	
+}
+
+.colHistory
+{
+	width: 83px;	
+}
+
+.colRestore
+{
+	width: 68px;	
+}
+
+.expandLink 
+{
+	text-decoration: none;
+		
+}
+
+/** Login **/
+#loginContent /* Internet Explorer */ 
+{
+	text-align: center;
+	padding: 15px 0px 15px 0px;		
+}
+
+#loginContent /* Mozilla Firefox alignment */ 
+{ 
+	text-align: -moz-center; 
+}
+
+#loginHeader
+{
+	width: 36%;
+	text-align: left;	
+}
+
+#loginHeader .PageHeaderModule .Header
+{
+	margin: 0px 0px 0px 0px;
+}
+
+#loginBox
+{
+	border: solid 1px #9E977B;
+	padding: 20px 10px 10px 10px;	
+	width: 33.75%;	
+}
+
+#requirements
+{
+	width: 34%;	
+	text-align: left;
+}
+
+#loginForm
+{
+	text-align: left;		
+}
+
+#loginLinks
+{
+	width: 50%;
+	text-align: left;	
+}
+
+/** Home **/
+
+.content
+{
+	padding: 15px 15px 20px 15px;
+}
+
+#UserInfo
+{
+	width: 48%;
+	float: left;
+		
+}
+
+#SystemInfo
+{
+	width: 48%;
+	float: right;		
+}
+
+.btnHome
+{
+	float: right;	
+}
+
+/** Sign Up **/
+#signupHeader
+{
+	width: 60%;
+	text-align: left;	
+}
+
+#signupHeader .PageHeaderModule .Header
+{
+	margin: 0px 0px 0px 0px;
+}
+
+#signupForm
+{	
+	padding: 15px 25px 15px 25px;	
+	width: 54%;
+	text-align: left;	
+}
+
+/** Forgot Your Password **/
+.panelForm
+{	
+	padding-bottom: 10px;	
+}
+
+/** Disclaimer **/
+
+#print
+{
+	width: 105px;
+}
+
+#pringImg
+{
+	float: left;	
+}
+
+#printLink
+{
+	float: right;	
+}
+
+/** Help Mouseover **/
+
+.fieldhelp
+{
+	padding: 5px;
+	border: solid 1px #A09382;
+	z-index: 200;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	max-width: 300px;
+	background: white;
+}
+
+#ctl00_lblHelp
+{
+	border: solid 1px #A09382;
+}
+
+.btnHelp
+{
+	padding-top: 3px;
+	padding-left: 4px;	
+	vertical-align: top;
+}
+
+/** Assmnt - Start **/
+
+.groupBox
+{
+	padding: 15px 20px 15px 20px;
+	border: solid 1px #BEA54C;	
+}
+
+.groupClass
+{
+	padding: 10px 10px 10px 10px;
+	border: solid 1px #BEA54C;	
+}
+
+.filterDivider
+{
+	width: 25px;
+}
+
+.labelSmall
+{
+	font-size: 11px;	
+}
+
+/** Assmnt Section **/
+
+.labelTaxModel
+{
+	font-weight: bold;	
+}
+
+/** System Admin - Edit User **/
+
+.strengthDisplay
+{		
+	font-weight: bold;			
+}
+
+/** Local Tax Tools **/
+.displayRevisions
+{
+	text-transform:capitalize;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.alternateRowLTT
+{
+	background-color:#FFE4B5; /* hex code = color: "moccasin" */
+}
+
+.revisedTotal
+{
+	background-color:#FFE4B5; /* hex code = color: "moccasin" */
+	/*border:solid 1px #B09430;*/
+	text-align:left;
+}
+
+
+
+.taxClassIndent
+{
+	text-indent:7px;
+}
+
+.phaseInTotal
+{
+	width:85px; 
+	vertical-align:middle; 
+	text-align:center;
+}
+
+
+/* LTT PhaseIn page */
+.phaseInClasses
+{
+	width:100px;
+	height:40px;
+	text-indent:5px;
+}
+
+.phaseInData
+{
+	width:70px;
+	text-align:left;
+	vertical-align:middle;	
+}
+
+.alignCenter
+{
+	text-align:center;
+}
