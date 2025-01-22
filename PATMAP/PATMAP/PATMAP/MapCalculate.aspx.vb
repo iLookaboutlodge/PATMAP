@@ -1,4 +1,9 @@
-﻿Partial Public Class MapCalculate
+﻿Imports JWT
+Imports JWT.Algorithms
+Imports JWT.Builder
+
+
+Partial Public Class MapCalculate
 	Inherits System.Web.UI.Page
 
 	Public ReadOnly Property PContainer()
@@ -12,6 +17,7 @@
 			Return Master.FindControl("lblCalcMessage").ClientID
 		End Get
 	End Property
+
 
 
 	Protected Sub RegisterPostBack()
@@ -59,8 +65,29 @@
 		Return IsAutoPostBack
 	End Function
 
-	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+	Private Shared Function GetUnixTimestamp(dateTime As DateTime) As Long
+		Dim unixStart As New DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)
+		Return CLng(Fix(dateTime.ToUniversalTime().Subtract(unixStart).TotalSeconds))
+	End Function
+	Private Shared Function GenerateToken(userId As String, Optional expiresInHours As Integer = 24) As String
+		Dim SecretKey As String = ConfigurationManager.AppSettings("TokenSecretKey")
+		Dim token As String = JwtBuilder.Create() _
+			.WithAlgorithm(New HMACSHA256Algorithm()) _
+			.WithSecret(SecretKey) _
+			.AddClaim("exp", DateTimeOffset.UtcNow.AddHours(expiresInHours)) _
+			.AddClaim("userId", userId) _
+			.AddClaim("iat", DateTimeOffset.UtcNow) _
+			.Encode()
 
+		Return token
+	End Function
+
+	Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+		Dim userId As String = Session("UserId").ToString()
+		Dim token As String = GenerateToken(userId)
+		Dim mapURL As String = ConfigurationManager.AppSettings("MAPURL")
+		Response.Redirect(mapURL + "?token=" + token)
+		Return
 		Master.errorMsg = ""
 
 		If Not IsPostBack Then
@@ -202,8 +229,8 @@
 			Dim BaseTaxYearModelID As Integer
 			Dim SubjectTaxYearModelID As Integer
 			Dim dataStale As Boolean
-			Dim enterPEMR As Boolean		'Donna
-			Dim PEMRByTotalLevy As Boolean	'Donna
+			Dim enterPEMR As Boolean        'Donna
+			Dim PEMRByTotalLevy As Boolean  'Donna
 			Dim basedataStale As Boolean
 
 			'check if data is stale
@@ -214,7 +241,7 @@
 			BaseTaxYearModelID = dr.GetValue(0)
 			SubjectTaxYearModelID = dr.GetValue(1)
 			dataStale = dr.GetValue(2)
-			enterPEMR = dr("enterPEMR")	 'Donna
+			enterPEMR = dr("enterPEMR")  'Donna
 
 			'Donna start
 			If dr("PEMRByTotalLevy").Equals(DBNull.Value) Then

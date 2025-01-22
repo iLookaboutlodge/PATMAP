@@ -77,6 +77,15 @@ Partial Public Class index
     Protected WithEvents btnLogin As Global.System.Web.UI.WebControls.ImageButton
 
     '''<summary>
+    '''btnSSO control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents btnSSO As Global.System.Web.UI.WebControls.ImageButton
+
+    '''<summary>
     '''panelLoginLinks control.
     '''</summary>
     '''<remarks>

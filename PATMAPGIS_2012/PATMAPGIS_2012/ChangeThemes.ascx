@@ -76,7 +76,10 @@
     </InsertParameters>
 </asp:SqlDataSource>
 <asp:SqlDataSource ID="dsMapThemes" runat="server" ConnectionString="<%$ ConnectionStrings:PATMAPConnection %>"
-    SelectCommand="SELECT [ThemeID], [LegendLabel], [MinThemeValue], [MaxThemeValue], [FillColorIndex], [ThemeSetID] FROM [MapThemes] WHERE ([ThemeSetID] = @ThemeSetID)" DeleteCommand="DELETE FROM [MapThemes] WHERE [ThemeID] = @ThemeID" InsertCommand="INSERT INTO [MapThemes] ([LegendLabel], [MinThemeValue], [MaxThemeValue], [FillColorIndex], [ThemeSetID]) VALUES (@LegendLabel, @MinThemeValue, @MaxThemeValue, @FillColorIndex, @ThemeSetID)" UpdateCommand="UPDATE [MapThemes] SET [LegendLabel] = @LegendLabel, [MinThemeValue] = @MinThemeValue, [MaxThemeValue] = @MaxThemeValue, [FillColorIndex] = @FillColorIndex WHERE [ThemeID] = @ThemeID" OnSelecting="dsMapThemes_Selecting"
+    SelectCommand="SELECT [ThemeID], [LegendLabel], [MinThemeValue], [MaxThemeValue], [FillColorIndex], [ThemeSetID] FROM [MapThemes] WHERE ([ThemeSetID] = @ThemeSetID)" 
+    DeleteCommand="DELETE FROM [MapThemes] WHERE [ThemeID] = @ThemeID" 
+    InsertCommand="INSERT INTO [MapThemes] ([LegendLabel], [MinThemeValue], [MaxThemeValue], [FillColorIndex], [ThemeSetID]) VALUES (@LegendLabel, @MinThemeValue, @MaxThemeValue, @FillColorIndex, @ThemeSetID)" 
+    UpdateCommand="UPDATE [MapThemes] SET [LegendLabel] = @LegendLabel, [MinThemeValue] = @MinThemeValue, [MaxThemeValue] = @MaxThemeValue, [FillColorIndex] = @FillColorIndex WHERE [ThemeID] = @ThemeID" OnSelecting="dsMapThemes_Selecting"
     >
     <SelectParameters>
         <asp:SessionParameter SessionField="MapThemeID" Type="Int32" Name="ThemeSetID" />

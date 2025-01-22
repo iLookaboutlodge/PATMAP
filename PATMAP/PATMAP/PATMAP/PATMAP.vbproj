@@ -15,12 +15,14 @@
     <AssemblyName>PATMAP</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MyType>Custom</MyType>
-    <UseIISExpress>false</UseIISExpress>
+    <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +67,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>bin\Interop.DynamicAuthoringToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="JWT, Version=11.0.0.0, Culture=neutral, PublicKeyToken=6f98bca0f40f2ecf, processorArchitecture=MSIL">
+      <HintPath>..\packages\JWT.11.0.0\lib\net40\JWT.dll</HintPath>
+    </Reference>
     <Reference Include="MapTools, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\MapTools.dll</HintPath>
@@ -89,6 +94,9 @@
     <Reference Include="Microsoft.SqlServer.PipelineHost, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Microsoft.SqlServer.PipelineHost.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="OpenSmtp, Version=1.11.0.34196, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -584,6 +592,7 @@
     <Content Include="images\SchoolDivisions_Analysis.gif" />
     <Content Include="images\SchoolDivisions_Background.gif" />
     <Content Include="images\spacer.gif" />
+    <Content Include="images\sso-button.png" />
     <Content Include="images\StatsCan_Lakes.gif" />
     <Content Include="images\StatsCan_Roads.gif" />
     <Content Include="images\subNavBackground.gif" />
@@ -1592,6 +1601,7 @@
     <Content Include="SSIS\PotashToSQL.dtsx" />
     <Content Include="SSIS\SchoolToSQL.dtsx" />
     <Content Include="NoLogin.master" />
+    <None Include="packages.config" />
     <None Include="Web References\PATMAPWebService\ReportService2005.wsdl" />
     <Content Include="Web References\PATMAPWebService\Role.datasource" />
     <Content Include="Web References\PATMAPWebService\Schedule.datasource" />
@@ -1634,7 +1644,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>60249</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.90.50/</IISUrl>
+          <IISUrl>http://localhost:60249/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

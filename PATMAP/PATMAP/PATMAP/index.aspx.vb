@@ -1,6 +1,15 @@
-
 Partial Class index
-    Inherits System.Web.UI.Page
+	Inherits System.Web.UI.Page
+
+
+
+	Protected Sub btnSSO_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnSSO.Click
+		'get sso signle on url and return url from web.config'
+		Dim ssoURL As String = System.Configuration.ConfigurationManager.AppSettings("SSOURL")
+		Dim returnURL As String = System.Configuration.ConfigurationManager.AppSettings("SSOReturnURL")
+		Dim redirectUrl As String = ssoURL & "SSO?returnURL=" & returnURL
+		Response.Redirect(redirectUrl)
+	End Sub
 
 	Protected Sub btnLogin_Click(ByVal sender As System.Object, ByVal e As System.Web.UI.ImageClickEventArgs) Handles btnLogin.Click
 
@@ -32,7 +41,9 @@ Partial Class index
 							Case 2
 								'account has been disabled
 								Master.errorMsg = PATMAP.common.GetErrorMessage("PATMAP4")
-								Exit Sub
+								Master.errorMsg = "No Active Account Found!"
+								con.Close()
+								Return
 							Case 3
 								'account has not yet been approved
 								Master.errorMsg = PATMAP.common.GetErrorMessage("PATMAP5")
@@ -316,6 +327,70 @@ Partial Class index
 			txtUsername.Focus()
 		End If
 
+		Dim tokenValue As String = Request.QueryString("token")
+		If Not String.IsNullOrEmpty(tokenValue) Then
+			Using con As SqlClient.SqlConnection = New SqlClient.SqlConnection(PATMAP.Global_asax.connString)
+				'first open the connection if not already opened
+				If Not con.State = ConnectionState.Open Then
+					con.Open()
+				End If
+
+				Master.errorMsg = ""
+				Dim noUser As Boolean = False
+				Dim userID As String = ""
+				Using query As SqlClient.SqlCommand = New SqlClient.SqlCommand
+					query.Connection = con
+					'verify if account is active
+					query.CommandText = "Select userID from users where userStatusID = 1 and ssoToken = @ssoToken"
+					query.Parameters.Add(New SqlClient.SqlParameter("@ssoToken", SqlDbType.VarChar, 225)).Value = tokenValue
+
+					Using dr As SqlClient.SqlDataReader = query.ExecuteReader
+						If Not dr.Read() Then
+							noUser = True
+							'if no record is found, assume case 2
+							Master.errorMsg = PATMAP.common.GetErrorMessage("PATMAP1")
+							Exit Sub
+						Else
+							userID = dr.GetValue(0)
+
+						End If
+					End Using
+				End Using
+
+				If Not String.IsNullOrEmpty(userID) Then
+					'add required session data
+					Session.Add("userID", userID)
+					Session.Add("userLoginType", "SSO")
+					Using query As SqlClient.SqlCommand = New SqlClient.SqlCommand
+						query.Connection = con
+
+						Dim sbSQL As New StringBuilder
+						sbSQL.AppendLine("update users set ssoToken = '' where userStatusID = 1 and userID = @userID")
+						sbSQL.AppendLine("insert into userStatistics select @userID, getdate()")
+
+						query.CommandText = sbSQL.ToString()
+						query.Parameters.Add(New SqlClient.SqlParameter("@userID", SqlDbType.Int)).Value = userID
+
+						Dim trans As SqlClient.SqlTransaction
+						trans = con.BeginTransaction()
+						query.Transaction = trans
+						Try
+							query.ExecuteNonQuery()
+							trans.Commit()
+						Catch
+							trans.Rollback()
+							Master.errorMsg = PATMAP.common.GetErrorMessage("PATMAP101")
+							Exit Sub
+						End Try
+
+
+					End Using
+
+					'transfer to home page
+					Response.Redirect("home.aspx", False)
+				End If
+			End Using
+		End If
 		'If PATMAP.Global_asax.satellite Then
 		'    panelLoginLinks.Visible = False
 		'    pnlMoreLinks.Visible = False

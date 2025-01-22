@@ -19,7 +19,10 @@ a:hover
 
 img
 {
-	border: 0px;	
+	border-style: none;
+    border-color: inherit;
+    border-width: 0px;
+    margin-bottom: 0px;
 }
 
 .clear

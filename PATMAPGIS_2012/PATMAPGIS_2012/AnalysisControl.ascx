@@ -46,9 +46,6 @@
             <asp:ListItem Value="Levy">Municipal Tax (Levy)</asp:ListItem>
             <asp:ListItem Value="School Tax" Selected="True">School Tax</asp:ListItem>
             <asp:ListItem Value="Assessment Value">Assessment</asp:ListItem>
-            <%--<asp:ListItem Value="Tax Credit">Tax Credit</asp:ListItem>
-            <asp:ListItem Value="Grant">K-12 Grant Tax</asp:ListItem>
-            <asp:ListItem Value="PMR">Provincial School Tax</asp:ListItem>--%>
             <asp:ListItem Value="Total Impact" Selected="True">Total Impact</asp:ListItem>
             <asp:ListItem Value="Total Tax" Selected="True">Total Tax</asp:ListItem>
             <asp:ListItem Value="Phase-In Amount" Selected="True">Phase-In Amount</asp:ListItem>
