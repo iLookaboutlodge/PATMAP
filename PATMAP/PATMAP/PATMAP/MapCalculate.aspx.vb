@@ -74,9 +74,9 @@ Partial Public Class MapCalculate
 		Dim token As String = JwtBuilder.Create() _
 			.WithAlgorithm(New HMACSHA256Algorithm()) _
 			.WithSecret(SecretKey) _
-			.AddClaim("exp", DateTimeOffset.UtcNow.AddHours(expiresInHours)) _
+			.AddClaim("exp", GetUnixTimestamp(DateTime.UtcNow.AddHours(expiresInHours))) _
 			.AddClaim("userId", userId) _
-			.AddClaim("iat", DateTimeOffset.UtcNow) _
+			.AddClaim("iat", GetUnixTimestamp(DateTime.UtcNow)) _
 			.Encode()
 
 		Return token
